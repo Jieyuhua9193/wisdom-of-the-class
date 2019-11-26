@@ -5,7 +5,6 @@
 </template>
 
 <style>
-#app{
- font-size: 12px;
-}
+@import 'assets/style/globle.css';
+
 </style>
