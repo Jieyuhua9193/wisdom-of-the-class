@@ -8,9 +8,6 @@ module.exports = {
      config.resolve.alias
          .set('@', resolve('src'))
          .set('assets',resolve('src/assets'))
-         .set('components',resolve('src/components'))
          .set('layout',resolve('src/layout'))
-         .set('base',resolve('src/base'))
-         .set('static',resolve('src/static'))
  }
 }

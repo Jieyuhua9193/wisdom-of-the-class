@@ -6,5 +6,6 @@
 
 <style>
 @import 'assets/style/globle.css';
+@import 'assets/fonts/css/fontcustom.css'
 
 </style>

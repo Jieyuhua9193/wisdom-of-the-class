@@ -1,8 +1,15 @@
 import Vue from 'vue'
 import App from './App.vue'
+// 依赖
 import router from './router'
 import store from './store'
+
 import 'flex.css'
+import ViewUI from 'view-design';
+import 'view-design/dist/styles/iview.css';
+import 'assets/style/iview-custom.css'
+
+Vue.use(ViewUI)
 
 Vue.config.productionTip = false
 
