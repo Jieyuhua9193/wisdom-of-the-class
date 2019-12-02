@@ -3,8 +3,8 @@
   <div class="menu-wrap">
    <menu-main />
    <Menu 
-    theme="dark"
-    width="180px"
+    theme="light"
+    :width="menuWidth"
     :accordion="true">
     <Submenu name="4">
      <template slot="title">
@@ -36,10 +36,21 @@
 <script lang="ts">
 import Vue from 'vue';
 import menuMain from '@/layout/aside/menuMain.vue'
+import layoutVuex from '@/layout/vuex/common'
 
 export default Vue.extend({
+ mixins: [layoutVuex],
  components: {
   menuMain
+ },
+ computed: {
+  menuWidth(): number{
+   if ((this as any).menuOpenEnable) {
+    return 180;
+   } else {
+    return 65;
+   }
+  }
  }
 });
 </script>
@@ -51,9 +62,13 @@ export default Vue.extend({
 }
 #menu .exit {
  height: 49px;
- color: #999999;
+ width: 100%;
+ color: rgba(255, 255, 255, 0.8);
  cursor: pointer;
- border-top: 1px solid #101117;
+ background: linear-gradient(to top,#2f44ac,#6877c3);
+ position: absolute;
+ bottom: 0;
+ z-index: 9999;
 }
 .icon{
  margin-right: 5px;

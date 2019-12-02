@@ -16,20 +16,21 @@ export default Vue.extend({
 
 <style scoped>
 .item {
- color: rgba(255,255,255,.7);
+ color: rgba(255, 255, 255, 0.8);
  font-size: 14px;
  padding: 14px 24px;
  position: relative;
  cursor: pointer;
  z-index: 1;
+ background: linear-gradient(to right,#2f44ac,#6877c3);
  transition: all .2s ease-in-out
 }
 .item:hover {
- background: #515a6e;
+ background: rgba(255, 255, 255, 0.2);
  color: #FFFFFF;
 }
 .icon {
- margin-right: 5px;
+ margin-right: 8px;
  font-size: 14px;
  vertical-align: middle;
 }

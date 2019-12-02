@@ -1,18 +1,26 @@
 <template>
  <div id="header" flex="main:left cross:center ">
-  <div class="menu-switch" @click="test = !test">
-   <span class="icon icon-alipay" v-if="test"></span>
-   <span class="icon icon-analyze" v-else></span>
+  <div class="menu-switch" @click="changeMenuStatus">
+   <span class="icon icon-menu-left" v-if="menuOpenEnable"></span>
+   <span class="icon icon-menu-right" v-else></span>
   </div>
  </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import layoutVuex from '@/layout/vuex/common'
+
 export default Vue.extend({
+ mixins: [layoutVuex],
  data () {
   return {
    test:false
+  }
+ },
+ methods: {
+  changeMenuStatus(){
+   this.$store.commit('UPDATE_MENU_OPEN_ENABLE');
   }
  }
 })
@@ -22,7 +30,7 @@ export default Vue.extend({
 #header{
  height: 55px;
  color: #FFFFFF;
- background: #1d1e23;
+ background: linear-gradient(to left,#2f44ac,#6877c3);
  width: 100%;
 }
 .menu-switch{
@@ -33,7 +41,7 @@ export default Vue.extend({
  cursor: pointer;
 }
 .menu-switch:hover{
- background: #515a6e;
+ background: rgba(255, 255, 255, 0.2);
 }
 .menu-switch .icon{
  font-size: 18px;

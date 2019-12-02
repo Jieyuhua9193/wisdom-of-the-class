@@ -5,8 +5,9 @@ import router from './router'
 import store from './store'
 
 import 'flex.css'
-import ViewUI from 'view-design';
-import 'view-design/dist/styles/iview.css';
+import ViewUI from 'iview';
+import  'animate.css/animate.css'
+import 'iview/dist/styles/iview.css';
 import 'assets/style/iview-custom.css'
 
 Vue.use(ViewUI)
