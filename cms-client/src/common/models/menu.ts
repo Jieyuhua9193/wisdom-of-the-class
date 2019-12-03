@@ -1,0 +1,61 @@
+export const mainMenu = [
+ {
+  alias:'概览',
+  name:'overview',
+  icon:'icon-overview',
+  path:'/overview'
+ },
+ {
+  alias:'轨迹',
+  name:'history',
+  icon:'icon-plugs',
+  path:'/history'
+ }
+]
+
+export const Menu = [
+ {
+  alias:'活动管理',
+  name:'active',
+  icon:'icon-icon-manager-common-hot',
+  children:[
+   {
+    alias:'活动发布',
+    name:'acitve-push',
+    path:'/active/push'
+   },
+   {
+    alias:'活动日志',
+    name:'acitve-note',
+    path:'/active/note'
+   }
+  ]
+ },
+ {
+  alias:'班级日志',
+  name:'class',
+  icon:'icon-lakala',
+  children:[
+   {
+    alias:'子菜单',
+    name:'test1',
+    path:'none'
+   },
+   {
+    alias:'子菜单',
+    name:'test2',
+    path:'none'
+   },
+   {
+    alias:'子菜单',
+    name:'test3',
+    path:'none'
+   },
+   {
+    alias:'子菜单',
+    name:'test4',
+    path:'none'
+   }
+  ]
+ }
+]

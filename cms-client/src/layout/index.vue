@@ -5,16 +5,18 @@
    :style="asideStyle">
    <logo :menuOpenEnable="menuOpenEnable" />
    <transition 
-    enter-active-class="animated fadeIn"
-    leave-active-class="animated fadeOut"
-    :duration="400"
-    mode="out-in">
+    enter-active-class="animated bounceInLeft"
+    leave-active-class="animated bounceOutLeft"
+    :duration="40000">
     <i-menu v-if="menuOpenEnable" />
+    <mini-mneu v-else />
    </transition>
   </div>
   <div class="content">
    <i-header />
-   <div class="views"></div>
+   <div class="views">
+    <router-view />
+   </div>
   </div>
  </div>
 </template>
@@ -23,6 +25,7 @@
 import Vue from 'vue'
 import Logo from './aside/logo.vue'
 import iMenu from './aside/menu.vue'
+import miniMneu from './aside/miniMenu.vue'
 import iHeader from './header/index.vue'
 import layoutVuex from '@/layout/vuex/common'
 
@@ -31,14 +34,15 @@ export default Vue.extend({
  components: {
   Logo,
   iMenu,
-  iHeader
+  iHeader,
+  miniMneu
  },
  computed: {
   asideStyle():string {
    if ((this as any).menuOpenEnable) {
-    return `width:180px;`
+    return `flex:0 0 180px;`
    }else{
-    return `width:65px;`
+    return `flex:0 0 65px;`
    }
   }
  }
@@ -51,18 +55,19 @@ export default Vue.extend({
  height: 100%;
 }
 #layout .aside{
- position: relative;
- max-width: 180px;
  width: 180px;
+ position: relative;
  color: #FFFFFF;
  background: linear-gradient(to right,#2f44ac,#6877c3);
- height: 100vh;
+ height: 100%;
  transition: all .2s ease-in-out;
- transition-delay: .4s
+ transition-delay: .2s;
+ overflow-x: hidden;
 }
 #layout .content{
- height: 100vh;
+ height: 100%;
  width: 100%;
  transition: all .2s ease-in-out;
+ transition-delay: .2s;
 }
 </style>

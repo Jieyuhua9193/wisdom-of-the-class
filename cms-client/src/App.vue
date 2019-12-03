@@ -6,6 +6,8 @@
 
 <style>
 @import 'assets/style/globle.css';
-@import 'assets/fonts/css/fontcustom.css'
-
+@import 'assets/fonts/css/fontcustom.css';
+#app {
+ height: 100%;
+}
 </style>
