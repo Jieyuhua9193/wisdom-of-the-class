@@ -4,6 +4,7 @@
    class="item" 
    v-for="(menu,index) in mainMenu"
    :key="index"
+   :class="{selected:menuSelected.name === menu.name}"
    @click="onMenuClick(menu.name,menu.path)">
    <span 
     class="icon" 
@@ -16,15 +17,21 @@
 <script lang="ts">
 import Vue from 'vue'
 import { mainMenu } from '@/common/models/menu'
+import layoutVuex from '@/layout/vuex/common'
 
 export default Vue.extend({
+ mixins: [layoutVuex],
  data () {
   return {
    mainMenu
   }
  },
  methods: {
-  onMenuClick(name: string ,path: string ){
+  onMenuClick(name: string ,path: string){
+   this.$store.commit('UPDATE_MENU_SELECTED',{
+    name:name,
+    parent:null
+   })
    this.$router.push(path)
   }
  }
@@ -52,7 +59,7 @@ export default Vue.extend({
  vertical-align: middle;
 }
 .selected {
- background: rgba(199, 99, 99, 0.3);
- color: #FFFFFF;
+ background: rgba(255, 255, 255, 0.2);
+ color:#FFFFFF;
 }
 </style>

@@ -7,10 +7,13 @@
    <Menu 
     theme="light"
     :width="menuWidth"
-    :accordion="true">
+    :accordion="true"
+    :active-name="menuSelected.name"
+    :open-names="[menuSelected.parent]"
+    @on-select="onMenuClick">
     <Submenu
-     v-for="(menu,index) in Menu"
-     :key="index"
+     v-for="menu in Menu"
+     :key="menu.name"
      :name="menu.name">
      <template slot="title">
       <span 
@@ -18,19 +21,15 @@
       :class="menu.icon"></span>
       {{menu.alias}}
      </template>
-     <MenuItem
-     v-for="(menuItem,index) in menu.children"
-     :key="index"
-     :name="menuItem.name"
-     :to="menuItem.path">
-     {{menuItem.alias}}
-     </MenuItem>
+      <MenuItem
+       v-for="menuItem in menu.children"
+       :key="menuItem.name"
+       :to="menuItem.path"
+       :name="menuItem.name">
+       {{menuItem.alias}}
+      </MenuItem>
     </Submenu>
    </Menu>
-  </div>
-  <div class="exit" flex="main:center cross:center">
-   <span class="icon icon-logout"></span>
-   <span>退出</span>
   </div>
  </div>
 </template>
@@ -59,6 +58,22 @@ export default Vue.extend({
     return '65';
    }
   }
+ },
+ methods: {
+  onMenuClick(name: string){
+   let parent:string |null = null;
+   Menu.forEach(r => {
+    r.children.forEach(c => {
+     if (c.name === name) {
+      parent = r.name
+     }
+    })
+   })
+   this.$store.commit('UPDATE_MENU_SELECTED',{
+    name:name,
+    parent:parent
+   })
+  }
  }
 });
 </script>
@@ -66,25 +81,9 @@ export default Vue.extend({
 <style scoped>
 #menu {
  width: 100%;
- height: 100%;
 }
-#menu .exit {
- height: 49px;
- width: 100%;
- color: rgba(255, 255, 255, 0.8);
- cursor: pointer;
- background: linear-gradient(to top,#2f44ac,#6877c3);
- position: absolute;
- bottom: 0;
- /* z-index: 9999; */
-}
-.icon{
- margin-right: 5px;
- font-size: 14px;
- vertical-align: middle;
-}
-#menu .exit:hover {
- background: rgba(255, 255, 255, 0.1);
- color: #FFFFFF;
+.selected {
+ background: rgba(255, 255, 255, 0.2);
+ color:#FFFFFF;
 }
 </style>

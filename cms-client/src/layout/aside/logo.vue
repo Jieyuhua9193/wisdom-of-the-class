@@ -36,5 +36,8 @@ export default Vue.extend({
  border-bottom: 1px solid #6877c357;
  transition: all .2s ease-in-out;
  transition-delay: .2s;
+ position: fixed;
+ top: 0;
+ z-index: 10;
 }
 </style>

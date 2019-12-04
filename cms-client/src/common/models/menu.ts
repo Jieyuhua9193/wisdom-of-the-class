@@ -3,13 +3,13 @@ export const mainMenu = [
   alias:'概览',
   name:'overview',
   icon:'icon-overview',
-  path:'/overview'
+  path:'/'
  },
  {
   alias:'轨迹',
   name:'history',
   icon:'icon-plugs',
-  path:'/history'
+  path:'/'
  }
 ]
 
@@ -22,12 +22,12 @@ export const Menu = [
    {
     alias:'活动发布',
     name:'acitve-push',
-    path:'/active/push'
+    path:'/'
    },
    {
     alias:'活动日志',
     name:'acitve-note',
-    path:'/active/note'
+    path:'/'
    }
   ]
  },
@@ -39,22 +39,22 @@ export const Menu = [
    {
     alias:'子菜单',
     name:'test1',
-    path:'none'
+    path:'/'
    },
    {
     alias:'子菜单',
     name:'test2',
-    path:'none'
+    path:'/'
    },
    {
     alias:'子菜单',
     name:'test3',
-    path:'none'
+    path:'/'
    },
    {
     alias:'子菜单',
     name:'test4',
-    path:'none'
+    path:'/'
    }
   ]
  }

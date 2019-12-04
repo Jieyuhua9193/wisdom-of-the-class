@@ -1,11 +1,14 @@
 export default interface LayoutState {
  menuOpenEnable: boolean;
- menuSelected: string | null;
+ menuSelected: object | null;
 }
 
 export const newLayoutState = () => {
  return {
   menuOpenEnable: true,
-  menuSelected: null
+  menuSelected: {
+   name: null,
+   parent: null
+  }
  }as LayoutState;
 };

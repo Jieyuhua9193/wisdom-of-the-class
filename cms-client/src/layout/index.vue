@@ -7,14 +7,24 @@
    <transition 
     enter-active-class="animated bounceInLeft"
     leave-active-class="animated bounceOutLeft"
-    :duration="40000">
+    :duration="400">
     <i-menu v-if="menuOpenEnable" />
     <mini-mneu v-else />
    </transition>
+   <div 
+     class="exit"
+     :style="asideStyle"
+     flex="main:center cross:center">
+      <span 
+      class="icon icon-logout"
+      :class="{exitMini:!menuOpenEnable}"></span>
+      <span v-if="menuOpenEnable">退出</span>
+   </div>
   </div>
   <div class="content">
    <i-header />
    <div class="views">
+    <h1>智慧班级管理后台</h1>
     <router-view />
    </div>
   </div>
@@ -40,9 +50,9 @@ export default Vue.extend({
  computed: {
   asideStyle():string {
    if ((this as any).menuOpenEnable) {
-    return `flex:0 0 180px;`
+    return `flex:0 0 180px;width:180px;`
    }else{
-    return `flex:0 0 65px;`
+    return `flex:0 0 65px;width:65px;`
    }
   }
  }
@@ -63,11 +73,42 @@ export default Vue.extend({
  transition: all .2s ease-in-out;
  transition-delay: .2s;
  overflow-x: hidden;
+ overflow-y: scroll;
+ padding-top: 55px;
+ padding-bottom: 49px;
+}
+#layout .aside::-webkit-scrollbar {
+  display: none;
 }
 #layout .content{
  height: 100%;
  width: 100%;
  transition: all .2s ease-in-out;
  transition-delay: .2s;
+}
+.aside .exit {
+ height: 49px;
+ width: 180px;
+ color: rgba(255, 255, 255, 0.8);
+ cursor: pointer;
+ background: linear-gradient(to top,#2f44ac,#6877c3);
+ position: fixed;
+ bottom: 0;
+ z-index: 999;
+ transition: all .2s ease-in-out;
+ transition-delay: .2s;
+}
+.aside .exit .icon{
+ margin-right: 5px;
+ font-size: 14px;
+ vertical-align: middle;
+}
+.aside .exit:hover {
+ background: rgba(255, 255, 255, 0.1);
+ color: #FFFFFF;
+}
+.exitMini{
+ transform: scale(1.4);
+ transition: all .2s ease-in-out;
 }
 </style>
