@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="56px" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>编组</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#128BF1" offset="0%"></stop>
+            <stop stop-color="#6159EB" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-2">
+            <stop stop-color="#128BF1" offset="0%"></stop>
+            <stop stop-color="#6159EB" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-3">
+            <stop stop-color="#128BF1" offset="0%"></stop>
+            <stop stop-color="#6159EB" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-4">
+            <stop stop-color="#128BF1" offset="0%"></stop>
+            <stop stop-color="#6159EB" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-443.000000, -253.000000)">
+            <g id="gradle" transform="translate(443.000000, 242.000000)">
+                <g id="编组" transform="translate(0.000000, 11.000000)">
+                    <path d="M22.9549809,10.0534203 L38.8379499,10.0534203 L46.8500909,24 L56,24 C53.9170635,10.4077863 42.2285824,0 28.1203906,0 C24.5523465,0 21.1423441,0.67223359 18,1.88685506 L22.9547608,10.0536415" id="路径" fill="url(#linearGradient-2)"></path>
+                    <path d="M47.2555725,32.0177528 L38.8381359,46.5112341 L17.6120531,46.5112341 L6.99923138,28.2375281 L15.4781572,13.6381673 L10.7935562,6 C4.22518862,11.1221653 0,19.0784076 0,28.020748 C0,43.4732572 12.60112,56 28.1453781,56 C42.3239165,56 54.0483757,45.5760018 56,32.0177528 L47.2553529,32.0177528" id="路径" fill="url(#linearGradient-3)"></path>
+                    <path d="M38,28 C38,33.5229065 33.5228576,38 27.9998908,38 C22.4769239,38 18,33.5229065 18,28 C18,22.4770935 22.4771424,18 27.9998908,18 C33.5228576,18 38,22.4770935 38,28" id="路径" fill="url(#linearGradient-4)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="84px" viewBox="0 0 256 84" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>gradle</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#128BF1" offset="0%"></stop>
+            <stop stop-color="#6159EB" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-2">
+            <stop stop-color="#128BF1" offset="0%"></stop>
+            <stop stop-color="#6159EB" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-3">
+            <stop stop-color="#128BF1" offset="0%"></stop>
+            <stop stop-color="#6159EB" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-4">
+            <stop stop-color="#128BF1" offset="0%"></stop>
+            <stop stop-color="#6159EB" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="8.4885823%" y1="45.9813236%" x2="91.1055118%" y2="52.2820863%" id="linearGradient-5">
+            <stop stop-color="#128BF1" offset="0%"></stop>
+            <stop stop-color="#6159EB" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="3.79590304%" y1="49.5054864%" x2="90.6261933%" y2="50.4113595%" id="linearGradient-6">
+            <stop stop-color="#2974F9" offset="0%"></stop>
+            <stop stop-color="#6159EB" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-443.000000, -253.000000)">
+            <g id="gradle" transform="translate(443.000000, 242.000000)">
+                <path d="M22.9549809,21.0534203 L38.8379499,21.0534203 L46.8500909,35 L56,35 C53.9170635,21.4077863 42.2285824,11 28.1203906,11 C24.5523465,11 21.1423441,11.6722336 18,12.8868551 L22.9547608,21.0536415" id="路径" fill="url(#linearGradient-2)"></path>
+                <path d="M47.2555725,43.0177528 L38.8381359,57.5112341 L17.6120531,57.5112341 L6.99923138,39.2375281 L15.4781572,24.6381673 L10.7935562,17 C4.22518862,22.1221653 0,30.0784076 0,39.020748 C0,54.4732572 12.60112,67 28.1453781,67 C42.3239165,67 54.0483757,56.5760018 56,43.0177528 L47.2553529,43.0177528" id="路径" fill="url(#linearGradient-3)"></path>
+                <path d="M38,39 C38,44.5229065 33.5228576,49 27.9998908,49 C22.4769239,49 18,44.5229065 18,39 C18,33.4770935 22.4771424,29 27.9998908,29 C33.5228576,29 38,33.4770935 38,39" id="路径" fill="url(#linearGradient-4)"></path>
+                <text id="智慧班级" fill="url(#linearGradient-5)" font-family="HannotateSC-W7, Hannotate SC" font-size="48" font-weight="bold">
+                    <tspan x="67" y="51">智慧班级</tspan>
+                </text>
+                <text id="为了每一个学生" fill="url(#linearGradient-6)" font-family="MLingWaiMedium-TC, LingWai TC" font-size="30" font-weight="400" letter-spacing="18.8">
+                    <tspan x="0" y="94">为了每一个学生</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

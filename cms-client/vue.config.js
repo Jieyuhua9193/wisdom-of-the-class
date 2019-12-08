@@ -9,6 +9,5 @@ module.exports = {
    .set('@', resolve('src'))
    .set('assets', resolve('src/assets'))
    .set('layout', resolve('src/layout'))
-   .set('~image', resolve('src/assets/image'))
  }
 }
