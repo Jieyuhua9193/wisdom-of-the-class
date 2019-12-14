@@ -30,7 +30,7 @@ export default Vue.extend({
 #header{
  height: 55px;
  color: #FFFFFF;
- background: linear-gradient(to left,#2f44ac,#6877c3);
+ background: linear-gradient(to right,#128Bf1 , 50% ,#6159Eb);
  width: 100%;
 }
 .menu-switch{

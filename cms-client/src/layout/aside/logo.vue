@@ -32,7 +32,7 @@ export default Vue.extend({
 .logo {
  width: 180px;
  height: 55px;
- background: linear-gradient(to right,#2f44ac,#6877c3);
+  background: linear-gradient(to left,#128Bf1, 40% ,#6159Eb);
  border-bottom: 1px solid #6877c357;
  transition: all .2s ease-in-out;
  transition-delay: .2s;

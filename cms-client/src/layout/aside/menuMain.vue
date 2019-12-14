@@ -46,7 +46,7 @@ export default Vue.extend({
  position: relative;
  cursor: pointer;
  z-index: 1;
- background: linear-gradient(to right,#2f44ac,#6877c3);
+ background: linear-gradient(to left,#128Bf1, 50% ,#6159Eb);
  transition: all .2s ease-in-out
 }
 .item:hover {

@@ -1,5 +1,5 @@
 .ivu-menu-light {
- background: linear-gradient(to right,#2f44ac,#6877c3);
+ background: linear-gradient(to left,#128Bf1, 50% ,#6159Eb);
 }
 .ivu-menu-vertical .ivu-menu-submenu-title:hover {
  background: rgba(255, 255, 255, 0.2);

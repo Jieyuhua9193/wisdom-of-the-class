@@ -97,14 +97,14 @@ export default Vue.extend({
 }
 .menu-child-item:hover{
  color:#FFFFFF;
- background: linear-gradient(to right, rgba(255, 255, 255, 0),rgba(255, 255, 255, 0.2));
+ background: linear-gradient(to left, rgba(255, 255, 255, 0),rgba(255, 255, 255, 0.2));
 }
 .selected {
  background: rgba(255, 255, 255, 0.2);
  color:#FFFFFF;
 }
 .menuChildSelected{
-  background: linear-gradient(to right, rgba(255, 255, 255, 0),rgba(255, 255, 255, 0.2));
+  background: linear-gradient(to left, rgba(255, 255, 255, 0),rgba(255, 255, 255, 0.2));
  color:#FFFFFF;
 }
 </style>
