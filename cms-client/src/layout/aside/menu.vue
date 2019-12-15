@@ -1,89 +1,160 @@
 <template>
- <div id="menu" flex="dir:top">
-  <div 
-   class="menu-wrap" 
-   :style="{width:menuWidth+'px'}">
-   <menu-main />
-   <Menu 
-    theme="light"
-    :width="menuWidth"
-    :accordion="true"
-    :active-name="menuSelected.name"
-    :open-names="[menuSelected.parent]"
-    @on-select="onMenuClick">
-    <Submenu
-     v-for="menu in Menu"
-     :key="menu.name"
-     :name="menu.name">
-     <template slot="title">
+ <div id="menu">
+  <Menu 
+   width="auto"
+  :accordion="true"
+  :class="menuitemClass"
+  :active-name="menuSelected.name"
+  :open-names="[menuSelected.parent]"
+  @on-select="onMenuClick"
+  @on-open-change="onMenuOpen">
+   <MenuItem
+    v-for="menu in mainMenu"
+   :key="menu.name"
+   :name="menu.name"
+   :to="menu.path"
+   :active-name="menuSelected.name">
+    <span 
+     class="menu-item-icon"
+    :class="menu.icon"></span>
+    <span 
+     class="menu-item-name">
+     {{menu.alias}}</span>
+   </MenuItem>
+   <Submenu
+    v-for="menu in Menu"
+   :class="{menuitemClass,'menu-open':isOpendMenu(menu.name)}"
+   :key="menu.name"
+   :name="menu.name">
+    <template 
+     slot="title">
+     <span 
+      class="menu-item-icon"
+     :class="menu.icon"></span>
+     <span 
+      class="menu-item-name">
+      {{menu.alias}}</span>
+    </template>
+    <div :style="menuOptionStyle">
+     <MenuItem
+      v-for="menuItem in menu.children"
+     :key="menuItem.name"
+     :to="menuItem.path"
+     :name="menuItem.name">
       <span 
-      class="icon"
-      :class="menu.icon"></span>
-      {{menu.alias}}
-     </template>
-      <MenuItem
-       v-for="menuItem in menu.children"
-       :key="menuItem.name"
-       :to="menuItem.path"
-       :name="menuItem.name">
-       {{menuItem.alias}}
-      </MenuItem>
-    </Submenu>
-   </Menu>
-  </div>
+       class="menu-item-name">
+       {{menu.alias}}</span>
+     </MenuItem>
+    </div>
+   </Submenu>
+  </Menu>
  </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import menuMain from '@/layout/aside/menuMain.vue'
-import layoutVuex from '@/layout/vuex/common'
-import { Menu } from '@/common/models/menu'
+import layoutVuex from '@/layout/vuex/common';
+import { mainMenu, Menu } from '@/common/models/menu';
 
 export default Vue.extend({
  mixins: [layoutVuex],
- components: {
-  menuMain
- },
- data () {
+ data() {
   return {
-   Menu
-  }
+   Menu,
+   mainMenu,
+   opendMenu: ''
+  };
  },
  computed: {
-  menuWidth(): string{
-   if ((this as any).menuOpenEnable) {
-    return '180';
-   } else {
-    return '65';
-   }
+  menuitemClass(): Array<string> {
+   return ['menu-item', (this as any).menuOpenEnable ? '' : 'collapsed-menu'];
+  },
+  menuOptionStyle(): string {
+   return (this as any).menuOpenEnable ? '' : 'height:0;overflow:hidden;';
   }
  },
  methods: {
-  onMenuClick(name: string){
-   let parent:string |null = null;
-   Menu.forEach(r => {
-    r.children.forEach(c => {
-     if (c.name === name) {
-      parent = r.name
-     }
-    })
-   })
-   this.$store.commit('UPDATE_MENU_SELECTED',{
-    name:name,
-    parent:parent
-   })
+  onMenuClick(name: string, parent:string) {
+   console.log(name,parent); 
+   mainMenu.forEach(r => {
+    if (r.name === name) {
+     this.opendMenu = ''
+    }
+   });
+  },
+  onMenuOpen(parent:string){
+   this.opendMenu = parent[0]
+   this.$store.commit('UPDATE_MENU_OPEN_ENABLE', true)
+  },
+  isOpendMenu(name: string){
+   if (name === this.opendMenu && !(this as any).menuOpenEnable) {
+    return true
+   }
+   return false
   }
  }
 });
 </script>
 
 <style scoped>
-#menu {
- width: 100%;
+.menu-item .menu-item-name {
+ display: inline-block;
+ overflow: hidden;
+ width: 69px;
+ text-overflow: ellipsis;
+ white-space: nowrap;
+ vertical-align: bottom;
+ transition: width 0.3s ease 0.3s;
+ padding-left: 10px;
 }
-.selected {
- background: rgba(255, 255, 255, 0.2);
- color:#FFFFFF;
+.menu-item .menu-item-icon {
+ display: inline-block;
+ transform: scale(1);
+ transition: all 0.1s ease;
+ vertical-align: middle;
+}
+.collapsed-menu .menu-item-name {
+ display: inline-block;
+ overflow: hidden;
+ width: 0;
+ text-overflow: ellipsis;
+ white-space: nowrap;
+ vertical-align: bottom;
+ transition: width 0.2s ease 0.2s;
+}
+.collapsed-menu .menu-item-icon {
+ display: inline-block;
+ transform: scale(1.3);
+ transition: transform 0.2s ease;
+ vertical-align: middle;
+}
+.ivu-menu-vertical .ivu-menu-item,
+.ivu-menu-vertical .ivu-menu-submenu-title {
+ padding: 0;
+ display: flex;
+ padding: 15px 0;
+ padding-left: 23px;
+ align-items: center;
+}
+.menu-open {
+ color: #6159Eb;
+ background:rgba(97, 89, 235, 0.05);
+}
+</style>
+
+<style>
+.collapsed-menu i::before{
+ display: none;
+}
+.ivu-menu-vertical .ivu-menu-item,
+.ivu-menu-vertical .ivu-menu-submenu-title {
+ padding: 0;
+ display: flex;
+ padding: 15px 0;
+ padding-left: 23px;
+ align-items: center;
+}
+.selected span.menu-item-icon {
+ color: #128Bf1;
 }
 </style>

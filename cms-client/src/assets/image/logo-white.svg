@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="91px" viewBox="0 0 256 91" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>gradle</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#128BF1" offset="0%"></stop>
+            <stop stop-color="#6159EB" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-59.000000, -70.000000)" fill="#FFFFFF">
+            <g id="gradle" transform="translate(59.000000, 58.000000)">
+                <g id="编组" transform="translate(0.000000, 12.057692)">
+                    <path d="M22.9549809,11.0200954 L38.8379499,11.0200954 L46.8500909,26.3076923 L56,26.3076923 C53.9170635,11.408535 42.2285824,0 28.1203906,0 C24.5523465,0 21.1423441,0.736871435 18,2.06828343 L22.9547608,11.0203378" id="路径"></path>
+                    <path d="M47.2555725,35.0963829 L38.8381359,50.9834682 L17.6120531,50.9834682 L6.99923138,30.952675 L15.4781572,14.9495295 L10.7935562,6.57692308 C4.22518862,12.1916042 0,20.9128698 0,30.7150507 C0,47.6533781 12.60112,61.3846154 28.1453781,61.3846154 C42.3239165,61.3846154 54.0483757,49.9583097 56,35.0963829 L47.2553529,35.0963829" id="路径"></path>
+                    <path d="M38,30.6923077 C38,36.7462629 33.5228576,41.6538462 27.9998908,41.6538462 C22.4769239,41.6538462 18,36.7462629 18,30.6923077 C18,24.6383525 22.4771424,19.7307692 27.9998908,19.7307692 C33.5228576,19.7307692 38,24.6383525 38,30.6923077" id="路径"></path>
+                </g>
+                <text id="智慧班级" font-family="HannotateSC-W7, Hannotate SC" font-size="48" font-weight="bold">
+                    <tspan x="67" y="54.2211538">智慧班级</tspan>
+                </text>
+                <text id="为了每一个学生" font-family="MLingWaiMedium-TC, LingWai TC" font-size="30" font-weight="400" letter-spacing="18.8">
+                    <tspan x="0" y="101.980769">为了每一个学生</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

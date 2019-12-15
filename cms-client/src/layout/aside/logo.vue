@@ -3,7 +3,7 @@
   class="logo" 
   flex="main:center cross:center"
   :style="logoStyle">
-  <h3>智慧班级</h3>
+  <img :src="logoImage" class="logo-image">
  </div>
 </template>
 
@@ -23,6 +23,13 @@ export default Vue.extend({
    }else {
     return `width:65px`;
    }
+  },
+  logoImage():string {
+    if (this.menuOpenEnable) {
+    return require(`@/assets/image/logo.svg`);
+   }else {
+    return require(`@/assets/image/logo-mini.svg`);
+   }
   }
  }
 })
@@ -32,12 +39,18 @@ export default Vue.extend({
 .logo {
  width: 180px;
  height: 55px;
-  background: linear-gradient(to left,#128Bf1, 40% ,#6159Eb);
- border-bottom: 1px solid #6877c357;
+ /* background: linear-gradient(to left,#128Bf1, 40% ,#6159Eb); */
+ /* background: #36445e; */
+ background: #FFFFFF;
+ border-bottom: 1px solid rgba(0, 0, 0, 0.1);
  transition: all .2s ease-in-out;
  transition-delay: .2s;
  position: fixed;
  top: 0;
  z-index: 10;
+}
+.logo .logo-image {
+ width: 50%;
+ height: 50%;
 }
 </style>

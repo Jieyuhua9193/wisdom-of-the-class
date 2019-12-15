@@ -4,14 +4,7 @@
     class="aside"
    :style="asideStyle">
    <logo :menuOpenEnable="menuOpenEnable" />
-   <transition 
-     enter-active-class="animated tsIn"
-     leave-active-class="animated tsOut"
-    :duration="400">
     <i-menu />
-    <!-- <i-menu v-if="menuOpenEnable" /> -->
-    <!-- <mini-mneu v-else /> -->
-   </transition>
    <div 
       class="exit"
      :style="asideStyle"
@@ -36,7 +29,6 @@
 import Vue from 'vue'
 import Logo from './aside/logo.vue'
 import iMenu from './aside/menu.vue'
-import miniMneu from './aside/miniMenu.vue'
 import iHeader from './header/index.vue'
 import layoutVuex from '@/layout/vuex/common'
 
@@ -45,8 +37,7 @@ export default Vue.extend({
  components: {
   Logo,
   iMenu,
-  iHeader,
-  // miniMneu
+  iHeader
  },
  computed: {
   asideStyle():string {
@@ -68,8 +59,9 @@ export default Vue.extend({
 #layout .aside{
  width: 180px;
  position: relative;
- color: #FFFFFF;
- background: linear-gradient(to left,#128Bf1, 50% ,#6159Eb);
+ /* background: linear-gradient(to left,#128Bf1, 50% ,#6159Eb); */
+ /* background: #36445e; */
+ background: #FFFFFF;
  height: 100%;
  transition: all .2s ease-in-out;
  transition-delay: .2s;
@@ -90,12 +82,13 @@ export default Vue.extend({
 .aside .exit {
  height: 49px;
  width: 180px;
- color: rgba(255, 255, 255, 0.8);
+ color: #128bF1;
  cursor: pointer;
- background: linear-gradient(to left,#128Bf1, 50% ,#6159Eb);
+ /* background: linear-gradient(to left,#128Bf1, 50% ,#6159Eb); */
  position: fixed;
  bottom: 0;
  z-index: 999;
+ border-top: 1px solid rgba(0, 0, 0, 0.1);
  transition: all .2s ease-in-out;
  transition-delay: .2s;
 }
@@ -105,19 +98,12 @@ export default Vue.extend({
  vertical-align: middle;
 }
 .aside .exit:hover {
- background: rgba(255, 255, 255, 0.1);
- color: #FFFFFF;
+ /* background: rgba(255, 255, 255, 0.1); */
+ color: #6159Eb;
+ transform: scale(1.2)
 }
 .exitMini{
  transform: scale(1.4);
  transition: all .2s ease-in-out;
-}
-.tsIn {
- width: 100%;
- transition: all .4s ease-in-out;
-}
-.tsOut {
- width: 100%;
- transition: all .4s ease-in-out;
 }
 </style>

@@ -1,23 +1,23 @@
 .ivu-menu-light {
- background: linear-gradient(to left,#128Bf1, 50% ,#6159Eb);
-}
-.ivu-menu-vertical .ivu-menu-submenu-title:hover {
- background: rgba(255, 255, 255, 0.2);
- color: #FFFFFF;
+ /* background: linear-gradient(to left,#128Bf1, 50% ,#6159Eb); */
+ /* background: #36445e; */
+ background: #FFFFFF;
 }
 .ivu-menu {
- color: rgba(255, 255, 255, 0.8);
+ color: #128Bf1;;
 }
 .ivu-menu-vertical.ivu-menu-light:after {
  width: 0;
 }
 .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu) {
- color: #FFFFFF;
- background:rgba(255, 255, 255, 0.2);
+ /* color: #FFFFFF; */
+ color: #6159Eb;
+ background:rgba(97, 89, 235, 0.05);
 }
 .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu):after {
- width: 0;
+ width: 3px;
+ background: #6159Eb;
 }
 .ivu-menu-vertical .ivu-menu-item:hover, .ivu-menu-vertical .ivu-menu-submenu-title:hover {
- color: #FFFFFF;
+ color: #6159Eb;
 }

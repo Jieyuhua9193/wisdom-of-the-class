@@ -30,7 +30,9 @@ export default Vue.extend({
 #header{
  height: 55px;
  color: #FFFFFF;
- background: linear-gradient(to right,#128Bf1 , 50% ,#6159Eb);
+ /* background: linear-gradient(to right,#128Bf1 , 50% ,#6159Eb); */
+ /* background: #36445e; */
+ background: #FFFFFF;
  width: 100%;
 }
 .menu-switch{
@@ -39,9 +41,7 @@ export default Vue.extend({
  line-height: 55px;
  text-align: center;
  cursor: pointer;
-}
-.menu-switch:hover{
- background: rgba(255, 255, 255, 0.2);
+ color: #128Bf1;
 }
 .menu-switch .icon{
  font-size: 18px;

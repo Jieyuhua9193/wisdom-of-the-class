@@ -61,7 +61,7 @@ export default Vue.extend({
  background-size: cover;
  background-position: bottom center;
  background-repeat: no-repeat;
- overflow: scroll;
+ overflow-y: auto;
  display: flex;
  flex-direction: row;
  align-items: center;
