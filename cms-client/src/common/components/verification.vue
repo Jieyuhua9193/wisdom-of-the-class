@@ -37,7 +37,8 @@ export default Vue.extend({
  data() {
   return {
    verStatus,
-   status: verStatus.normal
+   status: verStatus.normal,
+   isVelidated: false
   }
  },
  computed: {
@@ -61,11 +62,15 @@ export default Vue.extend({
   }
  },
  methods: {
-  startVer(){
-   this.status = verStatus.loading;
-   setTimeout(()=>{
-    this.status = verStatus.success;
-   }, 1500)
+  startVer() {
+   if (!this.isVelidated) {
+    this.status = verStatus.loading;
+    setTimeout(() => {
+     this.status = verStatus.success;
+    }, 1500);
+    this.$emit('Finish');
+    this.isVelidated = true
+   }
   }
  }
 });
@@ -120,7 +125,7 @@ export default Vue.extend({
   background: #128bF1;
   border-radius: 50%;
   color: #FFFFFF;
-  font-size: 13px;
+  font-size: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
