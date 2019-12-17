@@ -2,7 +2,7 @@ import Layout from '@/layout/index.vue'
 
 import User from '@/views/user/views/index.vue'
 
-import userRouter from '@/views/user/router'
+import UserRouter from '@/views/user/router'
 
 const frameIn = [
  {
@@ -14,14 +14,12 @@ const frameIn = [
  {
   path: '/user',
   name: 'user',
-  redirect: {name: 'login'},
+  redirect: '/user/login',
   meta: {
    auth: true
   },
   component: User,
-  children: [
-   ...userRouter
-  ]
+  children: UserRouter
  }
 ];
 

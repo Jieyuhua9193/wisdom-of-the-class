@@ -1,8 +1,10 @@
 <template>
-  <div id="login">
+  <div id="user">
     <div class="content">
       <div class="logo">
-        <img src="@/assets/image/logo.svg" />
+        <img src="@/assets/image/logo.svg"/>
+      </div>
+      <div class="body">
         <router-view/>
       </div>
     </div>
@@ -16,7 +18,7 @@ export default Vue.extend({});
 </script>
 
 <style scoped>
-#login {
+#user {
   width: 100%;
   height: 100%;
   background-image: url('//cms.jieyuhua.top/system/login_bg.svg');
@@ -29,7 +31,7 @@ export default Vue.extend({});
   align-items: center;
   justify-content: center;
 }
-#login .content {
+#user .content {
   width: 1000px;
   height: 600px;
   background-image: url('//cms.jieyuhua.top/system/login_content.svg');
@@ -38,14 +40,17 @@ export default Vue.extend({});
   background-repeat: no-repeat;
   box-shadow: 3px 3px 3px rgba(95, 60, 181, 0.3);
 }
-#login .content .logo {
+#user .content .logo {
   width: 100px;
   position: relative;
   top: 40px;
   left: 50px;
 }
-#login .content .logo img {
+#user .content .logo img {
   width: 100%;
   height: 100%;
+}
+#user .content .body {
+  padding-left: 80px;
 }
 </style>

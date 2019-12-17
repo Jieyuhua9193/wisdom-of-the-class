@@ -12,5 +12,6 @@ const defaultMeta = {
 };
 
 export default [
- comp('/login', 'Login', '登录', defaultMeta),
+ comp('login', 'Login', '登录', defaultMeta),
+ comp('register', 'Register', '注册', defaultMeta),
 ]

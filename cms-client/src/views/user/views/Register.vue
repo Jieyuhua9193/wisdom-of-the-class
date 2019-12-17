@@ -1,6 +1,6 @@
 <template>
-  <div id="login">
-    <div class="title">用户登录</div>
+  <div id="register">
+    <div class="title">用户注册</div>
     <Input
       class="item login-input"
       prefix="md-person"
@@ -10,16 +10,13 @@
       prefix="md-unlock"
       type="password"
       placeholder="请输入密码"/>
-    <div
-      class="supplement"
-      flex="main:justify cross:center">
-      <div class="remember-pwd-check">
-        <Checkbox v-model="rememberPwdEnable"/>
-        <span class="label">记住密码</span>
-      </div>
-      <div class="register-link">
-        <a href="#/user/register">注册账号</a>
-      </div>
+    <Input
+      class="item login-input"
+      prefix="md-unlock"
+      type="password"
+      placeholder="确认密码"/>
+    <div class="login-link">
+      <a href="#/user/login">已有账号？点击登录</a>
     </div>
     <div class="verification-wrap">
       <verification/>
@@ -27,7 +24,7 @@
     <div
       class="footer"
       flex="main:center">
-      <div class="login-btn">登录</div>
+      <div class="register-btn">立即注册</div>
     </div>
   </div>
 </template>
@@ -37,43 +34,33 @@ import Vue from 'vue'
 import verification from '@/common/components/verification.vue'
 
 export default Vue.extend({
-  name: 'login',
-  data() {
-    return {
-      data() {
-        return {
-          loginData: {
-            username: null,
-            password: null
-          }
-        }
-      }
-    }
-  },
-  components: {
+  components:{
     verification
   }
 })
 </script>
 
 <style scoped>
-#login {
+#register {
   width: 280px;
   margin-top: 100px;
 }
-#login .title {
+#register .title {
   font-size: 20px;
   text-align: center;
   margin-bottom: 40px;
   color: #128Bf1;
 }
-#login .item {
+#register .item {
   height: 50px;
+}
+#register .login-link {
+  text-align: right;
 }
 .footer {
   padding-top: 30px;
 }
-.footer .login-btn {
+.footer .register-btn {
   width: 200px;
   height: 35px;
   text-align: center;
@@ -87,22 +74,22 @@ export default Vue.extend({
 .verification-wrap {
   width: 100%;
   height: 40px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
-.footer .login-btn:active {
+.footer .register-btn:active {
   transform: scale(0.95);
 }
 </style>
 
 <style>
-#login .login-input .ivu-input {
+#register .login-input .ivu-input {
   border: none;
   border-bottom: 1px solid #999999;
   border-radius: 0;
   padding: 0 35px;
   box-shadow: none;
 }
-#login .login-input .ivu-input:focus {
+#register .login-input .ivu-input:focus {
   border-bottom: 1px solid #128bf1;
 }
 </style>
