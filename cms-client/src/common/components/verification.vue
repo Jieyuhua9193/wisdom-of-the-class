@@ -34,6 +34,7 @@ enum verStatus {
 }
 
 export default Vue.extend({
+<<<<<<< HEAD
   data() {
     return {
       verStatus,
@@ -67,6 +68,45 @@ export default Vue.extend({
         this.status = verStatus.success;
       }, 1500)
     }
+=======
+ data() {
+  return {
+   verStatus,
+   status: verStatus.normal,
+   isVelidated: false
+  }
+ },
+ computed: {
+  verText(): string {
+   if (this.status === verStatus.loading) {
+    return '智能验证中...'
+   } else if (this.status === verStatus.success) {
+    return '验证成功'
+   } else if (this.status === verStatus.fail) {
+    return '验证失败，危险操作！'
+   }
+   return '点击按钮开始智能验证'
+  },
+  verClass(): string {
+   if (this.status === verStatus.success) {
+    return 'ver-btn-success'
+   } else if (this.status === verStatus.fail) {
+    return 'ver-btn-fail'
+   }
+   return 'ver-btn-default'
+  }
+ },
+ methods: {
+  startVer() {
+   if (!this.isVelidated) {
+    this.status = verStatus.loading;
+    setTimeout(() => {
+     this.status = verStatus.success;
+    }, 1500);
+    this.$emit('Finish');
+    this.isVelidated = true
+   }
+>>>>>>> b3ad18a39f358083384914d6435a63c1e978ca70
   }
 });
 </script>
@@ -126,7 +166,7 @@ export default Vue.extend({
   background: #128bF1;
   border-radius: 50%;
   color: #FFFFFF;
-  font-size: 13px;
+  font-size: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
