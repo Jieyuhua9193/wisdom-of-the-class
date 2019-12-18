@@ -34,11 +34,11 @@ enum verStatus {
 }
 
 export default Vue.extend({
-<<<<<<< HEAD
   data() {
     return {
       verStatus,
-      status: verStatus.normal
+      status: verStatus.normal,
+      isVelidated: false
     }
   },
   computed: {
@@ -63,50 +63,15 @@ export default Vue.extend({
   },
   methods: {
     startVer() {
-      this.status = verStatus.loading;
-      setTimeout(() => {
-        this.status = verStatus.success;
-      }, 1500)
+      if (!this.isVelidated) {
+        this.status = verStatus.loading;
+        setTimeout(() => {
+          this.status = verStatus.success;
+        }, 1500);
+        this.$emit('Finish');
+        this.isVelidated = true
+      }
     }
-=======
- data() {
-  return {
-   verStatus,
-   status: verStatus.normal,
-   isVelidated: false
-  }
- },
- computed: {
-  verText(): string {
-   if (this.status === verStatus.loading) {
-    return '智能验证中...'
-   } else if (this.status === verStatus.success) {
-    return '验证成功'
-   } else if (this.status === verStatus.fail) {
-    return '验证失败，危险操作！'
-   }
-   return '点击按钮开始智能验证'
-  },
-  verClass(): string {
-   if (this.status === verStatus.success) {
-    return 'ver-btn-success'
-   } else if (this.status === verStatus.fail) {
-    return 'ver-btn-fail'
-   }
-   return 'ver-btn-default'
-  }
- },
- methods: {
-  startVer() {
-   if (!this.isVelidated) {
-    this.status = verStatus.loading;
-    setTimeout(() => {
-     this.status = verStatus.success;
-    }, 1500);
-    this.$emit('Finish');
-    this.isVelidated = true
-   }
->>>>>>> b3ad18a39f358083384914d6435a63c1e978ca70
   }
 });
 </script>
@@ -116,7 +81,6 @@ export default Vue.extend({
   position: relative;
   height: 40px;
 }
-
 .wrapper .ver-btn {
   display: flex;
   height: 100%;
@@ -126,12 +90,10 @@ export default Vue.extend({
   cursor: pointer;
   overflow: hidden;
 }
-
 .ver-btn:hover {
   box-shadow: 0 0 8px #128bF1;
   transition: all .2s ease;
 }
-
 .ver-icon .loading {
   position: absolute;
   width: 100%;
@@ -140,12 +102,10 @@ export default Vue.extend({
   z-index: 1;
   border-radius: 50%;
 }
-
 .ver-icon:hover {
   box-shadow: 0 0 10px #128bF1;
   transition: all .2s ease;
 }
-
 .ver-icon {
   position: relative;
   background: rgba(97, 89, 235, 0.3);
@@ -159,7 +119,6 @@ export default Vue.extend({
   vertical-align: middle;
   z-index: 5;
 }
-
 .shield {
   width: 21px;
   height: 21px;
@@ -173,25 +132,20 @@ export default Vue.extend({
   position: absolute;
   z-index: 2;
 }
-
 .icon-shield {
   margin-top: 1px;
 }
-
 .ver-btn-default .shield {
   animation: defaultWave 1.5s ease infinite
 }
-
 .ver-icon-loading-ani {
   animation: loadingWave 1s infinite;
 }
-
 .ver-btn-success .ver-text {
   color: #128bF1;
   animation: successTxt 1s;
   animation-iteration-count: 1
 }
-
 .ver-btn-fail .rect-top:before, .ver-btn-success .rect-top:before {
   content: "";
   display: block;
@@ -200,13 +154,11 @@ export default Vue.extend({
   top: 0;
   left: 0
 }
-
 .ver-btn-success .rect-top:before {
   border-left: 1px solid #128bF1;
   animation: successRectLeft .5s;
   animation-iteration-count: 1
 }
-
 .ver-btn-fail .rect-top, .ver-btn-success .rect-top {
   position: absolute;
   top: 0;
@@ -215,14 +167,12 @@ export default Vue.extend({
   z-index: 4;
   left: 0
 }
-
 .ver-btn-success .rect-top {
   animation: successRectTop 1s;
   animation-delay: .5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards
 }
-
 .ver-btn-fail .rect-top:after, .ver-btn-success .rect-top:after {
   content: "";
   display: block;
@@ -231,14 +181,12 @@ export default Vue.extend({
   top: -1px;
   right: 0
 }
-
 .ver-btn-success .rect-top:after {
   animation: successRectRight .5s;
   animation-delay: 1.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards
 }
-
 .ver-btn-fail .rect-bottom, .ver-btn-success .rect-bottom {
   position: absolute;
   left: 0;
@@ -247,14 +195,12 @@ export default Vue.extend({
   width: 100%;
   height: 20px;
 }
-
 .ver-btn-success .rect-bottom {
   animation: successRectBottom 1s;
   animation-delay: .5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards
 }
-
 .ver-btn-fail .rect-bottom:after, .ver-btn-success .rect-bottom:after {
   content: "";
   display: block;
@@ -263,14 +209,12 @@ export default Vue.extend({
   top: 1px;
   right: 0
 }
-
 .ver-btn-success .rect-bottom:after {
   animation: successRectBottomRight .5s;
   animation-delay: 1.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards
 }
-
 @keyframes loadingWave {
   0% {
     transform: rotate(0deg)
@@ -279,7 +223,6 @@ export default Vue.extend({
     transform: rotate(360deg)
   }
 }
-
 @keyframes defaultWave {
   0% {
     transform: scale(1)
@@ -294,7 +237,6 @@ export default Vue.extend({
     transform: scale(1)
   }
 }
-
 @keyframes successRectLeft {
   0% {
     transform: scaleY(0)
@@ -303,7 +245,6 @@ export default Vue.extend({
     transform: scaleY(1)
   }
 }
-
 @keyframes successRectTop {
   0% {
     width: 0;
@@ -314,7 +255,6 @@ export default Vue.extend({
     border-top: 1px solid #128bF1
   }
 }
-
 @keyframes successRectRight {
   0% {
     height: 0;
@@ -325,7 +265,6 @@ export default Vue.extend({
     border-right: 1px solid #128bF1;
   }
 }
-
 @keyframes successRectBottom {
   0% {
     width: 0;
@@ -336,7 +275,6 @@ export default Vue.extend({
     border-bottom: 1px solid #128bF1;
   }
 }
-
 @keyframes successRectBottomRight {
   0% {
     border-right: 1px solid #128bF1;
@@ -346,7 +284,6 @@ export default Vue.extend({
     border-right: 1px solid #128bF1;
   }
 }
-
 @keyframes successTxt {
   0% {
     color: #333
@@ -355,7 +292,6 @@ export default Vue.extend({
     color: #128bF1
   }
 }
-
 .ver-text {
   margin-left: 12px;
 }
