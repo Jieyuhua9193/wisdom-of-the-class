@@ -2,15 +2,15 @@
   <div id="verification">
     <div class="wrapper">
       <div
-      class="ver-btn"
-      :class="verClass"
-      @click="startVer">
+        class="ver-btn"
+        :class="verClass"
+        @click="startVer">
         <div class="rect-top"></div>
         <div class="rect-bottom"></div>
         <div class="ver-icon">
           <div
-          class="loading ver-icon-loading-ani"
-          v-if="status === verStatus.loading"></div>
+            class="loading ver-icon-loading-ani"
+            v-if="status === verStatus.loading"></div>
           <div class="shield">
             <span class="icon-shield"></span>
           </div>
@@ -27,52 +27,52 @@
 import Vue from 'vue';
 
 enum verStatus {
- normal = 0,
- success = 1,
- fail = -2,
- loading = -1
+  normal = 0,
+  success = 1,
+  fail = -2,
+  loading = -1
 }
 
 export default Vue.extend({
- data() {
-  return {
-   verStatus,
-   status: verStatus.normal,
-   isVelidated: false
-  }
- },
- computed: {
-  verText(): string {
-   if (this.status === verStatus.loading) {
-    return '智能验证中...'
-   } else if (this.status === verStatus.success) {
-    return '验证成功'
-   } else if (this.status === verStatus.fail) {
-    return '验证失败，危险操作！'
-   }
-   return '点击按钮开始智能验证'
+  data() {
+    return {
+      verStatus,
+      status: verStatus.normal,
+      isVelidated: false
+    }
   },
-  verClass(): string {
-   if (this.status === verStatus.success) {
-    return 'ver-btn-success'
-   } else if (this.status === verStatus.fail) {
-    return 'ver-btn-fail'
-   }
-   return 'ver-btn-default'
+  computed: {
+    verText(): string {
+      if (this.status === verStatus.loading) {
+        return '智能验证中...'
+      } else if (this.status === verStatus.success) {
+        return '验证成功'
+      } else if (this.status === verStatus.fail) {
+        return '验证失败，危险操作！'
+      }
+      return '点击按钮开始智能验证'
+    },
+    verClass(): string {
+      if (this.status === verStatus.success) {
+        return 'ver-btn-success'
+      } else if (this.status === verStatus.fail) {
+        return 'ver-btn-fail'
+      }
+      return 'ver-btn-default'
+    }
+  },
+  methods: {
+    startVer() {
+      if (!this.isVelidated) {
+        this.status = verStatus.loading;
+        setTimeout(() => {
+          this.status = verStatus.success;
+        }, 1500);
+        this.$emit('Finish');
+        this.isVelidated = true
+      }
+    }
   }
- },
- methods: {
-  startVer() {
-   if (!this.isVelidated) {
-    this.status = verStatus.loading;
-    setTimeout(() => {
-     this.status = verStatus.success;
-    }, 1500);
-    this.$emit('Finish');
-    this.isVelidated = true
-   }
-  }
- }
 });
 </script>
 
