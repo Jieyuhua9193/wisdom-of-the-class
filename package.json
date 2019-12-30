@@ -1,7 +1,16 @@
 {
   "name": "wisdom-of-the-class-client",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "author": "windy <windy9193@163.com>",
+  "license": "MIT",
+  "keywords": [
+    "typescript",
+    "windy",
+    "jieyuhua",
+    "wisdom of the class",
+    "vue"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -32,14 +41,5 @@
     "eslint-plugin-vue": "^5.0.0",
     "typescript": "~3.5.3",
     "vue-template-compiler": "^2.6.10"
-  },
-  "author": "windy <windy9193@163.com>",
-  "license": "MIT",
-  "keywords": [
-   "typescript",
-   "windy",
-   "jieyuhua",
-   "wisdom of the class",
-   "vue"
- ]
+  }
 }
