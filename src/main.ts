@@ -10,12 +10,12 @@ import  'animate.css/animate.css'
 import 'iview/dist/styles/iview.css';
 import 'assets/style/iview-custom.css'
 
-Vue.use(ViewUI)
+Vue.use(ViewUI);
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 new Vue({
   router,
   store,
   render: h => h(App)
-}).$mount('#app')
+}).$mount('#app');

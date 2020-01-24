@@ -1,25 +1,32 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
+import createPersistedState from 'vuex-persistedstate';
 
-import LayoutState, { newLayoutState } from '@/layout/vuex/store'
+import LayoutState, { newLayoutState } from '@/layout/vuex/store';
 
-import LayoutMutations from '@/layout/vuex/mutations'
+import LayoutMutations from '@/layout/vuex/mutations';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export interface AppState {
- layoutState: LayoutState;
+  layoutState: LayoutState;
 }
 
-const store =  new Vuex.Store({
+const store = new Vuex.Store({
   state: {
-   layoutState: newLayoutState(),
+    layoutState: newLayoutState(),
   },
   mutations: {
-   ...LayoutMutations
+    ...LayoutMutations
   },
-  modules: {
-  }
-})
+  plugins: [createPersistedState({
+    storage: window.localStorage,
+    reducer(state) {
+      return {
+        // 需要持久化的vuex
+      }
+    }
+  })]
+});
 
 export default store;

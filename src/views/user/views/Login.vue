@@ -4,17 +4,19 @@
     <Input
       class="item login-input"
       prefix="md-person"
+      v-model="loginData.username"
       placeholder="请输入手机号/邮箱"/>
     <Input
       class="item login-input"
       prefix="md-unlock"
       type="password"
+      v-model="loginData.password"
       placeholder="请输入密码"/>
     <div
       class="supplement"
       flex="main:justify cross:center">
       <div class="remember-pwd-check">
-        <Checkbox v-model="rememberPwdEnable"/>
+        <Checkbox v-model="rememberPwd"/>
         <span class="label">记住密码</span>
       </div>
       <div class="register-link">
@@ -27,7 +29,10 @@
     <div
       class="footer"
       flex="main:center">
-      <div class="login-btn">登录</div>
+      <div
+        class="login-btn"
+        @click="login">登录
+      </div>
     </div>
   </div>
 </template>
@@ -35,23 +40,28 @@
 <script lang="ts">
 import Vue from 'vue'
 import verification from '@/common/components/verification.vue'
+import userClient from '@/views/user/api'
 
 export default Vue.extend({
   name: 'login',
   data() {
     return {
-      data() {
-        return {
-          loginData: {
-            username: null,
-            password: null
-          }
-        }
-      }
+      loginData: {
+        username: null,
+        password: null,
+      },
+      rememberPwd: false
     }
   },
   components: {
     verification
+  },
+  methods: {
+    login() {
+      userClient.login(this.loginData).success(r => {
+        console.log(r)
+      })
+    }
   }
 })
 </script>

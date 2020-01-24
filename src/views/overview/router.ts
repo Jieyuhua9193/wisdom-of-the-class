@@ -10,8 +10,3 @@ const comp = (path: string, fName: string, name: string, meta: object) => {
 const defaultMeta = {
   auth: true
 };
-
-export default [
-  comp('login', 'Login', 'login', { auth: false }),
-  comp('register', 'Register', 'register', { auth: false }),
-]
