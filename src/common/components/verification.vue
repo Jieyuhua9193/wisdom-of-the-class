@@ -38,7 +38,7 @@ export default Vue.extend({
     return {
       verStatus,
       status: verStatus.normal,
-      isVelidated: false
+      isValidated: false
     }
   },
   computed: {
@@ -63,14 +63,20 @@ export default Vue.extend({
   },
   methods: {
     startVer() {
-      if (!this.isVelidated) {
+      if (!this.isValidated) {
         this.status = verStatus.loading;
         setTimeout(() => {
           this.status = verStatus.success;
         }, 1500);
-        this.$emit('Finish');
-        this.isVelidated = true
+        setTimeout(() => {
+          this.$emit('Finish');
+          this.isValidated = true
+        }, 2600);
       }
+    },
+    reset(){
+      this.status = verStatus.normal;
+      this.isValidated = false
     }
   }
 });

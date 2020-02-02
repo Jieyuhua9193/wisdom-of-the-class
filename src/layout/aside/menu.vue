@@ -1,6 +1,6 @@
 <template>
  <div id="menu">
-  <Menu 
+  <Menu
    width="auto"
   :accordion="true"
   :class="menuitemClass"
@@ -14,10 +14,10 @@
    :name="menu.name"
    :to="menu.path"
    :active-name="menuSelected.name">
-    <span 
+    <span
      class="menu-item-icon"
     :class="menu.icon"></span>
-    <span 
+    <span
      class="menu-item-name">
      {{menu.alias}}</span>
    </MenuItem>
@@ -26,12 +26,12 @@
    :class="{menuitemClass,'menu-open':isOpendMenu(menu.name)}"
    :key="menu.name"
    :name="menu.name">
-    <template 
+    <template
      slot="title">
-     <span 
+     <span
       class="menu-item-icon"
      :class="menu.icon"></span>
-     <span 
+     <span
       class="menu-item-name">
       {{menu.alias}}</span>
     </template>
@@ -41,7 +41,7 @@
      :key="menuItem.name"
      :to="menuItem.path"
      :name="menuItem.name">
-      <span 
+      <span
        class="menu-item-name">
        {{menu.alias}}</span>
      </MenuItem>
@@ -75,7 +75,7 @@ export default Vue.extend({
  },
  methods: {
   onMenuClick(name: string, parent:string) {
-   console.log(name,parent); 
+   console.log(name,parent);
    mainMenu.forEach(r => {
     if (r.name === name) {
      this.opendMenu = ''
@@ -83,14 +83,11 @@ export default Vue.extend({
    });
   },
   onMenuOpen(parent:string){
-   this.opendMenu = parent[0]
+   this.opendMenu = parent[0];
    this.$store.commit('UPDATE_MENU_OPEN_ENABLE', true)
   },
   isOpendMenu(name: string){
-   if (name === this.opendMenu && !(this as any).menuOpenEnable) {
-    return true
-   }
-   return false
+   return !!(name === this.opendMenu && !(this as any).menuOpenEnable);
   }
  }
 });

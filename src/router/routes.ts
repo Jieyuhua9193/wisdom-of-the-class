@@ -1,4 +1,5 @@
 import Layout from '@/layout/index.vue';
+import Create from '@/views/global/views/create.vue';
 
 import User from '@/views/user/views/index.vue';
 import Overview from '@/views/overview/views/index.vue';
@@ -30,6 +31,14 @@ const frameIn = [
     },
     component: User,
     children: UserRouter
+  },
+  {
+    path: '/create',
+    name: 'role-create',
+    meta: {
+      auth: true
+    },
+    component: Create
   }
 ];
 

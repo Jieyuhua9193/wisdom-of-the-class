@@ -3,7 +3,7 @@ export const mainMenu = [
   alias:'概览',
   name:'overview',
   icon:'icon-overview',
-  path:'/'
+  path:'overview'
  },
  {
   alias:'轨迹',
@@ -11,7 +11,8 @@ export const mainMenu = [
   icon:'icon-plugs',
   path:'/'
  }
-]
+];
+
 
 export const Menu = [
  {
