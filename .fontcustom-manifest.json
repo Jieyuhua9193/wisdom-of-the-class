@@ -1,195 +1,199 @@
 {
   "checksum": {
-    "previous": "69d643f67a191bd861c3c55e82e9d9f243b8dd7e3929b5777db67353854767b1",
-    "current": "69d643f67a191bd861c3c55e82e9d9f243b8dd7e3929b5777db67353854767b1"
+    "previous": "42612a088aa511946f0f9c34860e4884cb74f282c9da72ed076fe28bc6e74612",
+    "current": "42612a088aa511946f0f9c34860e4884cb74f282c9da72ed076fe28bc6e74612"
   },
   "fonts": [
-    "src/assets/fonts/css/fontcustom_69d643f67a191bd861c3c55e82e9d9f2.ttf",
-    "src/assets/fonts/css/fontcustom_69d643f67a191bd861c3c55e82e9d9f2.svg",
-    "src/assets/fonts/css/fontcustom_69d643f67a191bd861c3c55e82e9d9f2.woff",
-    "src/assets/fonts/css/fontcustom_69d643f67a191bd861c3c55e82e9d9f2.eot",
-    "src/assets/fonts/css/fontcustom_69d643f67a191bd861c3c55e82e9d9f2.woff2"
+    "./src/assets/fonts/css/fontcustom_42612a088aa511946f0f9c34860e4884.ttf",
+    "./src/assets/fonts/css/fontcustom_42612a088aa511946f0f9c34860e4884.svg",
+    "./src/assets/fonts/css/fontcustom_42612a088aa511946f0f9c34860e4884.woff",
+    "./src/assets/fonts/css/fontcustom_42612a088aa511946f0f9c34860e4884.eot",
+    "./src/assets/fonts/css/fontcustom_42612a088aa511946f0f9c34860e4884.woff2"
   ],
   "glyphs": {
     "admin-icon": {
       "codepoint": 61696,
-      "source": "src/assets/fonts/svgs/admin-icon.svg"
+      "source": "./src/assets/fonts/svgs/admin-icon.svg"
     },
     "alert": {
       "codepoint": 61697,
-      "source": "src/assets/fonts/svgs/alert.svg"
+      "source": "./src/assets/fonts/svgs/alert.svg"
     },
     "alipay": {
       "codepoint": 61698,
-      "source": "src/assets/fonts/svgs/alipay.svg"
+      "source": "./src/assets/fonts/svgs/alipay.svg"
     },
     "analyze": {
       "codepoint": 61699,
-      "source": "src/assets/fonts/svgs/analyze.svg"
+      "source": "./src/assets/fonts/svgs/analyze.svg"
     },
     "avatar": {
       "codepoint": 61700,
-      "source": "src/assets/fonts/svgs/avatar.svg"
+      "source": "./src/assets/fonts/svgs/avatar.svg"
     },
     "back": {
       "codepoint": 61701,
-      "source": "src/assets/fonts/svgs/back.svg"
+      "source": "./src/assets/fonts/svgs/back.svg"
     },
     "badge": {
       "codepoint": 61702,
-      "source": "src/assets/fonts/svgs/badge.svg"
+      "source": "./src/assets/fonts/svgs/badge.svg"
     },
     "batch-operate": {
       "codepoint": 61703,
-      "source": "src/assets/fonts/svgs/batch-operate.svg"
+      "source": "./src/assets/fonts/svgs/batch-operate.svg"
     },
     "batch-operate2": {
       "codepoint": 61704,
-      "source": "src/assets/fonts/svgs/batch-operate2.svg"
+      "source": "./src/assets/fonts/svgs/batch-operate2.svg"
     },
     "big-excel": {
       "codepoint": 61705,
-      "source": "src/assets/fonts/svgs/big-excel.svg"
+      "source": "./src/assets/fonts/svgs/big-excel.svg"
     },
     "billing": {
       "codepoint": 61706,
-      "source": "src/assets/fonts/svgs/billing.svg"
+      "source": "./src/assets/fonts/svgs/billing.svg"
     },
     "booking": {
       "codepoint": 61707,
-      "source": "src/assets/fonts/svgs/booking.svg"
+      "source": "./src/assets/fonts/svgs/booking.svg"
     },
     "calendar": {
       "codepoint": 61708,
-      "source": "src/assets/fonts/svgs/calendar.svg"
+      "source": "./src/assets/fonts/svgs/calendar.svg"
     },
     "close": {
       "codepoint": 61709,
-      "source": "src/assets/fonts/svgs/close.svg"
+      "source": "./src/assets/fonts/svgs/close.svg"
     },
     "close2": {
       "codepoint": 61710,
-      "source": "src/assets/fonts/svgs/close2.svg"
+      "source": "./src/assets/fonts/svgs/close2.svg"
     },
     "commit-code-and-update-prefer-complete": {
       "codepoint": 61711,
-      "source": "src/assets/fonts/svgs/commit-code-and-update-prefer-complete.svg"
+      "source": "./src/assets/fonts/svgs/commit-code-and-update-prefer-complete.svg"
     },
     "deleted_small": {
       "codepoint": 61712,
-      "source": "src/assets/fonts/svgs/deleted_small.svg"
+      "source": "./src/assets/fonts/svgs/deleted_small.svg"
     },
     "edit2": {
       "codepoint": 61713,
-      "source": "src/assets/fonts/svgs/edit2.svg"
+      "source": "./src/assets/fonts/svgs/edit2.svg"
     },
     "error": {
       "codepoint": 61714,
-      "source": "src/assets/fonts/svgs/error.svg"
+      "source": "./src/assets/fonts/svgs/error.svg"
     },
     "gear-3": {
       "codepoint": 61715,
-      "source": "src/assets/fonts/svgs/gear-3.svg"
+      "source": "./src/assets/fonts/svgs/gear-3.svg"
     },
     "gift": {
       "codepoint": 61716,
-      "source": "src/assets/fonts/svgs/gift.svg"
+      "source": "./src/assets/fonts/svgs/gift.svg"
+    },
+    "house": {
+      "codepoint": 61741,
+      "source": "./src/assets/fonts/svgs/house.svg"
     },
     "i-bent-tip": {
       "codepoint": 61717,
-      "source": "src/assets/fonts/svgs/i-bent-tip.svg"
+      "source": "./src/assets/fonts/svgs/i-bent-tip.svg"
     },
     "icon-manager-common-hot": {
       "codepoint": 61718,
-      "source": "src/assets/fonts/svgs/icon-manager-common-hot.svg"
+      "source": "./src/assets/fonts/svgs/icon-manager-common-hot.svg"
     },
     "image-ueditor": {
       "codepoint": 61719,
-      "source": "src/assets/fonts/svgs/image-ueditor.svg"
+      "source": "./src/assets/fonts/svgs/image-ueditor.svg"
     },
     "lab": {
       "codepoint": 61720,
-      "source": "src/assets/fonts/svgs/lab.svg"
+      "source": "./src/assets/fonts/svgs/lab.svg"
     },
     "lakala": {
       "codepoint": 61721,
-      "source": "src/assets/fonts/svgs/lakala.svg"
+      "source": "./src/assets/fonts/svgs/lakala.svg"
     },
     "logout": {
       "codepoint": 61722,
-      "source": "src/assets/fonts/svgs/logout.svg"
+      "source": "./src/assets/fonts/svgs/logout.svg"
     },
     "mac": {
       "codepoint": 61723,
-      "source": "src/assets/fonts/svgs/mac.svg"
+      "source": "./src/assets/fonts/svgs/mac.svg"
     },
     "mail": {
       "codepoint": 61724,
-      "source": "src/assets/fonts/svgs/mail.svg"
+      "source": "./src/assets/fonts/svgs/mail.svg"
     },
     "male": {
       "codepoint": 61725,
-      "source": "src/assets/fonts/svgs/male.svg"
+      "source": "./src/assets/fonts/svgs/male.svg"
     },
     "menu-left": {
       "codepoint": 61738,
-      "source": "src/assets/fonts/svgs/menu-left.svg"
+      "source": "./src/assets/fonts/svgs/menu-left.svg"
     },
     "menu-right": {
       "codepoint": 61739,
-      "source": "src/assets/fonts/svgs/menu-right.svg"
+      "source": "./src/assets/fonts/svgs/menu-right.svg"
     },
     "network": {
       "codepoint": 61726,
-      "source": "src/assets/fonts/svgs/network.svg"
+      "source": "./src/assets/fonts/svgs/network.svg"
     },
     "overview": {
       "codepoint": 61727,
-      "source": "src/assets/fonts/svgs/overview.svg"
+      "source": "./src/assets/fonts/svgs/overview.svg"
     },
     "plugs": {
       "codepoint": 61728,
-      "source": "src/assets/fonts/svgs/plugs.svg"
+      "source": "./src/assets/fonts/svgs/plugs.svg"
     },
     "right": {
       "codepoint": 61729,
-      "source": "src/assets/fonts/svgs/right.svg"
+      "source": "./src/assets/fonts/svgs/right.svg"
     },
     "right_arrow": {
       "codepoint": 61730,
-      "source": "src/assets/fonts/svgs/right_arrow.svg"
+      "source": "./src/assets/fonts/svgs/right_arrow.svg"
     },
     "settings": {
       "codepoint": 61731,
-      "source": "src/assets/fonts/svgs/settings.svg"
+      "source": "./src/assets/fonts/svgs/settings.svg"
     },
     "share": {
       "codepoint": 61732,
-      "source": "src/assets/fonts/svgs/share.svg"
+      "source": "./src/assets/fonts/svgs/share.svg"
     },
     "shield": {
       "codepoint": 61740,
-      "source": "src/assets/fonts/svgs/shield.svg"
+      "source": "./src/assets/fonts/svgs/shield.svg"
     },
     "top": {
       "codepoint": 61733,
-      "source": "src/assets/fonts/svgs/top.svg"
+      "source": "./src/assets/fonts/svgs/top.svg"
     },
     "up2": {
       "codepoint": 61734,
-      "source": "src/assets/fonts/svgs/up2 .svg"
+      "source": "./src/assets/fonts/svgs/up2 .svg"
     },
     "wating": {
       "codepoint": 61735,
-      "source": "src/assets/fonts/svgs/wating.svg"
+      "source": "./src/assets/fonts/svgs/wating.svg"
     },
     "windows": {
       "codepoint": 61736,
-      "source": "src/assets/fonts/svgs/windows.svg"
+      "source": "./src/assets/fonts/svgs/windows.svg"
     },
     "yes": {
       "codepoint": 61737,
-      "source": "src/assets/fonts/svgs/yes.svg"
+      "source": "./src/assets/fonts/svgs/yes.svg"
     }
   },
   "options": {
@@ -206,14 +210,14 @@
     "font_name": "fontcustom",
     "force": false,
     "input": {
-      "templates": "src/assets/fonts/svgs",
-      "vectors": "src/assets/fonts/svgs"
+      "templates": "./src/assets/fonts/svgs",
+      "vectors": "./src/assets/fonts/svgs"
     },
     "no_hash": false,
     "output": {
-      "css": "src/assets/fonts/css",
-      "fonts": "src/assets/fonts/css",
-      "preview": "src/assets/fonts/css"
+      "css": "./src/assets/fonts/css",
+      "fonts": "./src/assets/fonts/css",
+      "preview": "./src/assets/fonts/css"
     },
     "preprocessor_path": null,
     "quiet": false,
@@ -223,7 +227,7 @@
     ]
   },
   "templates": [
-    "src/assets/fonts/css/fontcustom.css",
-    "src/assets/fonts/css/fontcustom-preview.html"
+    "./src/assets/fonts/css/fontcustom.css",
+    "./src/assets/fonts/css/fontcustom-preview.html"
   ]
 }
