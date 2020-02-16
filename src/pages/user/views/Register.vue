@@ -1,46 +1,45 @@
 <template>
-  <div id="login">
-    <div class="title">用户登录</div>
+  <div id="register">
+    <div class="title">用户注册</div>
     <Input
-      class="item login-input"
+      v-model="registerData.email"
       :class="{error: $email.$dirty && $email.$invalid}"
+      class="item login-input"
       prefix="md-person"
-      v-model="loginData.email"
       placeholder="请输入邮箱"/>
     <Input
-      class="item login-input"
+      v-model="registerData.password"
       :class="{error: $password.$dirty && $password.$invalid}"
+      class="item login-input"
       prefix="md-unlock"
       type="password"
-      v-model="loginData.password"
       placeholder="请输入密码"/>
-    <div
-      class="supplement"
-      flex="main:justify cross:center">
-      <div class="remember-pwd-check">
-        <Checkbox v-model="rememberPwd"/>
-        <span class="label">记住密码</span>
-      </div>
-      <div class="register-link">
-        <a href="#/user/register">注册账号</a>
-      </div>
+    <Input
+      v-model="rePassword"
+      :class="{error: $rePassword.$dirty && $rePassword.$invalid}"
+      class="item login-input"
+      prefix="md-unlock"
+      type="password"
+      placeholder="确认密码"/>
+    <div class="login-link">
+      <a href="#/user/login">已有账号？点击登录</a>
     </div>
     <div class="verification-wrap">
-      <verification
-        ref="validation"
-        @Finish="isValidated = true"/>
+      <verification @Finish="isValidated = true"/>
     </div>
     <div
       class="footer"
       flex="main:center">
       <div
-        class="login-btn"
-        @click="login">登录
+        class="register-btn"
+        @click="register"
+      >立即注册
       </div>
     </div>
     <Activation
       :msg='activationMsg'
       :show="showActivationModal"
+      @finish="$router.replace('/user/login')"
       @close="showActivationModal = false"/>
   </div>
 </template>
@@ -49,66 +48,45 @@
 import Vue from 'vue';
 import verification from '@/common/components/verification.vue';
 import Activation from '../components/Activation.vue';
-import userClient from '@/views/user/api';
-import userVuex from '@/views/user/vuex/common';
-import Cookies from 'js-cookie'
+import userClient from '@/pages/user/api'
 import { validationMixin } from 'vuelidate';
 import { required, email } from 'vuelidate/lib/validators';
 
 export default Vue.extend({
-  mixins: [validationMixin, userVuex],
-  name: 'login',
+  mixins: [validationMixin],
   data() {
     return {
-      loginData: {
+      registerData: {
         email: null,
-        password: null,
+        password: null
       },
-      rememberPwd: false,
+      rePassword: null,
       isValidated: false,
-      showActivationModal: false,
-      activationMsg: ''
+      activationMsg: '',
+      showActivationModal: false
     }
   },
   validations: {
-    loginData: {
+    registerData: {
       email: { email, required },
       password: { required }
-    }
+    },
+    rePassword: { required }
   },
   components: {
     verification,
     Activation
   },
-  mounted() {
-    this.init()
-  },
   methods: {
-    init(): void {
-      if ((this as any).passwordInfo) {
-        this.rememberPwd = true;
-        this.loginData = (this as any).passwordInfo
-      }
-    },
-    login() {
-      this.$v.loginData.$touch();
-      this.activationMsg = `该账号未激活，我们已经向邮箱${this.loginData.email}发送了激活码，请激活账号后操作`;
+    register() {
+      this.$v.$touch();
       if (this.check()) {
-        (this as any).$refs.validation.reset();
-        this.$store.commit('SAVE_USER_EMAIL', this.loginData.email);
-        this.rememberPwd && this.$store.commit('REMEMBER_PASSWORD', this.loginData);
-        this.isValidated = false;
-        userClient.login(this.loginData).success(r => {
-          Cookies.set('wisdom_of_class_token', r.token, { expires: 20 * (60 * 60 * 1000) });
-          this.$store.commit('UPDATE_USER_INFO', r.user);
-          if (r.error && r.error === 'NEED_ACTIVATION') {
-            this.showActivationModal = true;
-          } else if (r.user.role) {
-            this.$router.push({ path: '/overview', replace: true })
-          } else {
-            this.$router.push({ path: '/create', replace: true })
-          }
-        })
+        this.activationMsg = `我们已向您的邮箱${this.registerData.email}发送了一个激活码，请激活后使用。`;
+        userClient.register(this.registerData).success(() => {
+          this.$store.commit('SAVE_USER_EMAIL', this.registerData.email);
+          this.$store.commit('REMEMBER_PASSWORD', this.registerData);
+          this.showActivationModal = true;
+        });
       }
     },
     check(): boolean {
@@ -117,6 +95,10 @@ export default Vue.extend({
           this.$Message.warning('邮箱格式错误');
         } else if ((this as any).$password.$invalid) {
           this.$Message.warning('请输入密码');
+        } else if ((this as any).$rePassword.$invalid) {
+          this.$Message.warning('请再次输入密码');
+        } else if (this.registerData.password !== this.rePassword) {
+          this.$Message.warning('两次密码输入不一致，请重试');
         } else if (!this.isValidated) {
           this.$Message.warning('请完成验证');
         }
@@ -127,33 +109,39 @@ export default Vue.extend({
   },
   computed: {
     $email(): object {
-      return this.$v.loginData.email
+      return this.$v.registerData.email
     },
     $password(): object {
-      return this.$v.loginData.password
+      return this.$v.registerData.password
+    },
+    $rePassword(): object {
+      return this.$v.rePassword
     }
-  }
+  },
 })
 </script>
 
 <style scoped>
-#login {
+#register {
   width: 280px;
   margin-top: 100px;
 }
-#login .title {
+#register .title {
   font-size: 20px;
   text-align: center;
   margin-bottom: 40px;
   color: #128Bf1;
 }
-#login .item {
+#register .item {
   height: 50px;
+}
+#register .login-link {
+  text-align: right;
 }
 .footer {
   padding-top: 30px;
 }
-.footer .login-btn {
+.footer .register-btn {
   width: 200px;
   height: 35px;
   text-align: center;
@@ -167,22 +155,22 @@ export default Vue.extend({
 .verification-wrap {
   width: 100%;
   height: 40px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
-.footer .login-btn:active {
+.footer .register-btn:active {
   transform: scale(0.95);
 }
 </style>
 
 <style>
-#login .login-input .ivu-input {
+#register .login-input .ivu-input {
   border: none;
   border-bottom: 1px solid #999999;
   border-radius: 0;
   padding: 0 35px;
   box-shadow: none;
 }
-#login .login-input .ivu-input:focus {
+#register .login-input .ivu-input:focus {
   border-bottom: 1px solid #128bf1;
 }
 .error .ivu-input {

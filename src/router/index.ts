@@ -3,7 +3,7 @@ import VueRouter from 'vue-router';
 import routes from '@/router/routes';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
-import Cookies from 'js-cookie'
+import Cookies from 'js-cookie';
 
 const originalPush = VueRouter.prototype.push;
 // @ts-ignore

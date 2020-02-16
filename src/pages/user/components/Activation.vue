@@ -41,8 +41,8 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import userVuex from '@/views/user/vuex/common'
-import userClient from '@/views/user/api'
+import userVuex from '@/pages/user/vuex/common'
+import userClient from '@/pages/user/api'
 
 export default Vue.extend({
   mixins: [userVuex],

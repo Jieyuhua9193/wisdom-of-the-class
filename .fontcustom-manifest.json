@@ -1,14 +1,14 @@
 {
   "checksum": {
-    "previous": "42612a088aa511946f0f9c34860e4884cb74f282c9da72ed076fe28bc6e74612",
-    "current": "42612a088aa511946f0f9c34860e4884cb74f282c9da72ed076fe28bc6e74612"
+    "previous": "ea082d2f6a92ebda50efbeeff14c5820d3e03d7b3699a12024aa2cebdec9c572",
+    "current": "ea082d2f6a92ebda50efbeeff14c5820d3e03d7b3699a12024aa2cebdec9c572"
   },
   "fonts": [
-    "./src/assets/fonts/css/fontcustom_42612a088aa511946f0f9c34860e4884.ttf",
-    "./src/assets/fonts/css/fontcustom_42612a088aa511946f0f9c34860e4884.svg",
-    "./src/assets/fonts/css/fontcustom_42612a088aa511946f0f9c34860e4884.woff",
-    "./src/assets/fonts/css/fontcustom_42612a088aa511946f0f9c34860e4884.eot",
-    "./src/assets/fonts/css/fontcustom_42612a088aa511946f0f9c34860e4884.woff2"
+    "./src/assets/fonts/css/fontcustom_ea082d2f6a92ebda50efbeeff14c5820.ttf",
+    "./src/assets/fonts/css/fontcustom_ea082d2f6a92ebda50efbeeff14c5820.svg",
+    "./src/assets/fonts/css/fontcustom_ea082d2f6a92ebda50efbeeff14c5820.woff",
+    "./src/assets/fonts/css/fontcustom_ea082d2f6a92ebda50efbeeff14c5820.eot",
+    "./src/assets/fonts/css/fontcustom_ea082d2f6a92ebda50efbeeff14c5820.woff2"
   ],
   "glyphs": {
     "admin-icon": {

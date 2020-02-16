@@ -12,3 +12,9 @@ html, body {
 * {
  scrollbar-width: thin;
 }
+.invalid {
+ border-color: red !important;
+}
+.invalid .ivu-input{
+ border-color: red !important;
+}

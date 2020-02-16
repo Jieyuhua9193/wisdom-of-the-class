@@ -1,10 +1,10 @@
 import Layout from '@/layout/index.vue';
-import Create from '@/views/global/views/create.vue';
+import Create from '@/pages/global/views/create.vue';
 
-import User from '@/views/user/views/index.vue';
-import Overview from '@/views/overview/views/index.vue';
+import User from '@/pages/user/views/index.vue';
+import Overview from '@/pages/overview/views/index.vue';
 
-import UserRouter from '@/views/user/router';
+import UserRouter from '@/pages/user/router';
 
 const frameIn = [
   {
