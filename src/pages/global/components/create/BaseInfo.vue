@@ -31,7 +31,7 @@
           class="input"
           :class="{invalid:$qq.$dirty && $qq.$invalid}"
           v-model="baseInfo.qq"
-          placeholder="请填写常用QQ"/>
+          placeholder="请填写"/>
       </div>
     </div>
   </FormWrap>
@@ -57,14 +57,6 @@ export default Vue.extend({
   components: {
     FormWrap
   }
-  // watch: {
-  //   baseInfo: {
-  //     handler() {
-  //       console.log("监听到了变化 ", this.baseInfo);
-  //     },
-  //     deep: true
-  //   }
-  // }
 })
 </script>
 
@@ -95,10 +87,10 @@ export default Vue.extend({
   margin-top: 5px;
 }
 .phone-prompt {
-  margin-left: 65px;
-  margin-top: 5px;
+  margin-left: 70px;
 }
 .prompt {
+  margin-top: 5px;
   font-size: 12px;
   color: #999;
 }

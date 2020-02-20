@@ -19,19 +19,15 @@ export default Vue.extend({
   data() {
     return {
       studentInfo: {
+        idCardNumber: null,
+        studentId: null,
+        dormitory: null,
+        familyAddress: null
       }
     }
   },
   components: {
     FormWrap
-  },
-  watch: {
-    baseInfo: {
-      handler() {
-        console.log("监听到了变化 ", this.studentInfo);
-      },
-      deep: true
-    }
   }
 })
 </script>

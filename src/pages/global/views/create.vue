@@ -17,7 +17,8 @@
             ref="student"
             v-if="checkedRole === Role.Student"/>
           <CreateClass
-            ref="create"
+            ref="class"
+            :userEmail="userInfo.email"
             v-if="checkedRole === Role.MainTeacher"/>
         </div>
       </div>
@@ -64,8 +65,12 @@ export default Vue.extend({
   methods: {
     onConfirm() {
       (this as any).$refs.base.check();
+      (this as any).$refs.teacher.check();
+      (this as any).$refs.class.check();
       const requestData = {
-        ...(this as any).$refs.base.baseInfo
+        ...(this as any).$refs.base.baseInfo,
+        ...(this as any).$refs.teacher.teacherInfo,
+        ...(this as any).$refs.class.classInfo
       };
       console.log(requestData)
     }

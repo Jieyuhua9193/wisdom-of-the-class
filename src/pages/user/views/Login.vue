@@ -49,9 +49,10 @@
 import Vue from 'vue';
 import verification from '@/common/components/verification.vue';
 import Activation from '../components/Activation.vue';
-import userClient from '@/pages/user/api';
+import userClient from '@/pages/user/apis';
 import userVuex from '@/pages/user/vuex/common';
 import Cookies from 'js-cookie'
+import http from 'axios';
 import {validationMixin} from 'vuelidate';
 import {required, email} from 'vuelidate/lib/validators';
 
@@ -100,6 +101,7 @@ export default Vue.extend({
         this.isValidated = false;
         userClient.login(this.loginData).success(r => {
           let inFifteenMinutes = new Date(new Date().getTime() + 20 * 60 * 60 * 1000);
+          http.defaults.headers.post['token'] = r.token;
           Cookies.set('wisdom_of_class_token', r.token, { expires: inFifteenMinutes });
           this.$store.commit('UPDATE_USER_INFO', r.user);
           if (r.error && r.error === 'NEED_ACTIVATION') {

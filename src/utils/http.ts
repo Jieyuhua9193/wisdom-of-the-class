@@ -1,6 +1,6 @@
 import http from 'axios';
 import Cookie from 'js-cookie'
-import { Message } from 'iview'
+import {Message} from 'iview'
 
 type Success = any;
 type Error = any;

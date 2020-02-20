@@ -48,7 +48,7 @@
 import Vue from 'vue';
 import verification from '@/common/components/verification.vue';
 import Activation from '../components/Activation.vue';
-import userClient from '@/pages/user/api'
+import userClient from '@/pages/user/apis'
 import { validationMixin } from 'vuelidate';
 import { required, email } from 'vuelidate/lib/validators';
 

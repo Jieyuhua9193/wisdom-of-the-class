@@ -1,4 +1,4 @@
-import { post } from '@/utils/http'
+import { post } from '@/utils/http';
 
 export default {
   login: post('user/login'),
