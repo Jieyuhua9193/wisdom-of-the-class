@@ -19,6 +19,9 @@ export default Vue.extend({
       (this as any).$v.teacherInfo.$touch();
       if (this.$officeAddress.$invalid) {
         this.$Message.warning('必填项不能为空')
+        return false
+      } else {
+        return true
       }
     }
   }

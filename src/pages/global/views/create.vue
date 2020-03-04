@@ -44,6 +44,7 @@ import TeacherInfo from '../components/create/TeacherInfo.vue';
 import StudentInfo from '../components/create/StudentInfo.vue';
 import CreateClass from '../components/create/CreateClass.vue';
 import Role from '../models/Role';
+import globalClient from '@/pages/global/apis';
 import userVuex from '@/pages/user/vuex/common';
 import globalVuex from '@/pages/global/vuex/common';
 
@@ -64,15 +65,28 @@ export default Vue.extend({
   },
   methods: {
     onConfirm() {
-      (this as any).$refs.base.check();
-      (this as any).$refs.teacher.check();
-      (this as any).$refs.class.check();
-      const requestData = {
-        ...(this as any).$refs.base.baseInfo,
-        ...(this as any).$refs.teacher.teacherInfo,
-        ...(this as any).$refs.class.classInfo
-      };
-      console.log(requestData)
+      if (this.check()) {
+        const requestData = {
+          userInfo: {
+            ...(this as any).$refs.base.baseInfo,
+            ...(this as any).$refs.teacher.teacherInfo
+          },
+          classInfo: {
+            ...(this as any).$refs.class.classInfo
+          }
+        };
+        globalClient.createClass(requestData).success(r => {
+          console.log('创建成功', r)
+        });
+        console.log(requestData)
+      } else {
+        console.log('验证不通过');
+      }
+    },
+    check() {
+      return (this as any).$refs.base.check() &&
+      (this as any).$refs.teacher.check() &&
+      (this as any).$refs.class.check()
     }
   }
 });

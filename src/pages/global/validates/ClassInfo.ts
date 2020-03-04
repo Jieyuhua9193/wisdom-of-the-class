@@ -39,10 +39,14 @@ export default Vue.extend({
       (this as any).$v.classInfo.$touch();
       if (this.$v.$dirty && this.$v.$invalid) {
         if (this.$dormitories.$invalid) {
-          this.$Message.warning('至少添加一个寝室')
+          this.$Message.warning('至少添加一个寝室');
+          return false
         } else {
-          this.$Message.warning('必填项不能为空')
+          this.$Message.warning('必填项不能为空');
+          return false
         }
+      } else {
+        return true
       }
     }
   }

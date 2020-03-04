@@ -29,9 +29,13 @@ export default Vue.extend({
     check() {
       (this as any).$v.baseInfo.$touch();
       if (this.$phoneNumber.$invalid) {
-        this.$Message.warning('手机号格式有误')
+        this.$Message.warning('手机号格式有误');
+        return false
       } else if (this.$realName.$invalid || this.$qq.$invalid) {
-        this.$Message.warning('必填项不能为空')
+        this.$Message.warning('必填项不能为空');
+        return false
+      } else {
+        return true
       }
     }
   }
