@@ -106,7 +106,7 @@ export default Vue.extend({
           this.$store.commit('UPDATE_USER_INFO', r.user);
           if (r.error && r.error === 'NEED_ACTIVATION') {
             this.showActivationModal = true;
-          } else if (r.user.role) {
+          } else if (r.user.role || r.user.role === 0) {
             this.$router.push({ path: '/overview', replace: true })
           } else {
             this.$router.push({ path: '/create', replace: true })
