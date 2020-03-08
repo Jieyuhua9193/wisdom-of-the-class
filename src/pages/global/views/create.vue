@@ -76,9 +76,10 @@ export default Vue.extend({
           }
         };
         globalClient.createClass(requestData).success(r => {
-          console.log('创建成功', r)
+          this.$Message.success('创建成功');
+          this.$router.push({ path: '/overview', replace: true });
+          console.log('创建成功', r);
         });
-        console.log(requestData)
       } else {
         console.log('验证不通过');
       }
