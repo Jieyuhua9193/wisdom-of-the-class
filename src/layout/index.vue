@@ -18,10 +18,11 @@
       </div>
     </div>
     <div class="content">
-      <i-header/>
+      <i-header :classInfo="classInfo"/>
       <div class="views">
-        <h1>智慧班级管理后台</h1>
-        <router-view/>
+        <div class="page-wrap">
+          <router-view/>
+        </div>
       </div>
     </div>
   </div>
@@ -33,9 +34,11 @@ import Logo from './aside/logo.vue'
 import iMenu from './aside/menu.vue'
 import iHeader from './header/index.vue'
 import layoutVuex from '@/layout/vuex/common'
+import commonClient from '@/common/apis';
+import commonVuex from '@/common/vuex/common';
 
 export default Vue.extend({
-  mixins: [layoutVuex],
+  mixins: [layoutVuex, commonVuex],
   components: {
     Logo,
     iMenu,
@@ -48,6 +51,16 @@ export default Vue.extend({
       } else {
         return `flex:0 0 65px;width:65px;`
       }
+    }
+  },
+  mounted() {
+    this.getClassInfo()
+  },
+  methods: {
+    getClassInfo() {
+      commonClient.getClassInfo().success(r => {
+        this.$store.commit('SET_CLASS_INFO', r)
+      })
     }
   }
 })
@@ -81,11 +94,21 @@ export default Vue.extend({
   transition: all .2s ease-in-out;
   transition-delay: .2s;
 }
+#layout .content .views {
+  height: 100%;
+  padding: 15px 15px 70px 15px;
+}
+#layout .content .views .page-wrap {
+  height: 100%;
+  background: #fff;
+  border-radius: 5px;
+}
 .aside .exit {
   height: 49px;
   width: 180px;
   color: #128bF1;
   cursor: pointer;
+  background: #FFFFFF;
   /* background: linear-gradient(to left,#128Bf1, 50% ,#6159Eb); */
   position: fixed;
   bottom: 0;
@@ -99,7 +122,6 @@ export default Vue.extend({
   font-size: 14px;
   vertical-align: middle;
 }
-
 .aside .exit .exit__content:hover {
   /* background: rgba(255, 255, 255, 0.1); */
   color: #6159Eb;

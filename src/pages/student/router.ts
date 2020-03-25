@@ -12,5 +12,7 @@ const defaultMeta = {
 };
 
 export default [
-  comp('overview', 'index', 'overview', { auth: false }),
+  comp('list', 'list', 'student-list', defaultMeta),
+  comp('messaging', 'messaging', 'student-messaging', defaultMeta),
+  comp('import', 'bulkImport', 'student-import', defaultMeta),
 ]

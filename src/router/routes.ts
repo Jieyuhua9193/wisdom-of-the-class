@@ -3,8 +3,10 @@ import Create from '@/pages/global/views/create.vue';
 
 import User from '@/pages/user/views/index.vue';
 import Overview from '@/pages/overview/views/index.vue';
+import Student from '@/pages/student/views/index.vue';
 
 import UserRouter from '@/pages/user/router';
+import StudentRouter from '@/pages/student/router';
 
 const frameIn = [
   {
@@ -13,12 +15,22 @@ const frameIn = [
     component: Layout,
     children: [
       {
-        path: 'overview',
+        path: '/overview',
         name: 'overview',
         meta: {
           auth: true
         },
         component: Overview
+      },
+      {
+        path: 'student',
+        name: 'Student',
+        redirect: '/student/list',
+        component: Student,
+        children: StudentRouter,
+        meta: {
+          auth: true
+        }
       }
     ]
   },

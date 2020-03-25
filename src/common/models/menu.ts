@@ -3,60 +3,15 @@ export const mainMenu = [
   alias:'概览',
   name:'overview',
   icon:'icon-overview',
-  path:'overview'
+  path:'/overview'
  },
  {
-  alias:'轨迹',
-  name:'history',
+  alias:'学生管理',
+  name:'student',
   icon:'icon-plugs',
-  path:'/'
+  path:'/student'
  }
 ];
 
 
-export const Menu = [
- {
-  alias:'活动管理',
-  name:'active',
-  icon:'icon-icon-manager-common-hot',
-  children:[
-   {
-    alias:'活动发布',
-    name:'acitve-push',
-    path:'/'
-   },
-   {
-    alias:'活动日志',
-    name:'acitve-note',
-    path:'/'
-   }
-  ]
- },
- {
-  alias:'班级日志',
-  name:'class',
-  icon:'icon-lakala',
-  children:[
-   {
-    alias:'子菜单',
-    name:'test1',
-    path:'/'
-   },
-   {
-    alias:'子菜单',
-    name:'test2',
-    path:'/'
-   },
-   {
-    alias:'子菜单',
-    name:'test3',
-    path:'/'
-   },
-   {
-    alias:'子菜单',
-    name:'test4',
-    path:'/'
-   }
-  ]
- }
-]
+export const Menu = [];

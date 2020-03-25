@@ -2,12 +2,14 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import createPersistedState from 'vuex-persistedstate';
 
-import LayoutState, {newLayoutState} from '@/layout/vuex/store';
-import UserState, {newUserState} from "@/pages/user/vuex/store";
-import {UserAccountState, newUserAccountState} from "@/pages/user/vuex/store";
-import GlobalState, {newGlobalState} from "@/pages/global/vuex/store";
+import LayoutState, { newLayoutState } from '@/layout/vuex/store';
+import UserState, { newUserState } from "@/pages/user/vuex/store";
+import CommonState, { newCommonState } from "@/common/vuex/store";
+import { UserAccountState, newUserAccountState } from "@/pages/user/vuex/store";
+import GlobalState, { newGlobalState } from "@/pages/global/vuex/store";
 
 import LayoutMutations from '@/layout/vuex/mutations';
+import CommonMutations from '@/common/vuex/mutations';
 import UserMutations from '@/pages/user/vuex/mutations';
 import GlobalMutations from '@/pages/global/vuex/mutations';
 
@@ -18,6 +20,7 @@ export interface AppState {
   userState: UserState;
   userAccountState: UserAccountState;
   globalState: GlobalState;
+  commonState: CommonState;
 }
 
 const store = new Vuex.Store({
@@ -25,12 +28,14 @@ const store = new Vuex.Store({
     layoutState: newLayoutState(),
     userState: newUserState,
     userAccountState: newUserAccountState,
-    globalState: newGlobalState
+    globalState: newGlobalState,
+    commonState: newCommonState
   },
   mutations: {
     ...LayoutMutations,
     ...UserMutations,
-    ...GlobalMutations
+    ...GlobalMutations,
+    ...CommonMutations
   },
   plugins: [createPersistedState({
     storage: window.localStorage,
