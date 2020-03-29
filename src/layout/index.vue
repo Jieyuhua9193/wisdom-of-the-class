@@ -91,11 +91,13 @@ export default Vue.extend({
 #layout .content {
   height: 100%;
   width: 100%;
+  overflow: hidden;
   transition: all .2s ease-in-out;
   transition-delay: .2s;
 }
 #layout .content .views {
   height: 100%;
+  min-height: 600px;
   padding: 15px 15px 70px 15px;
 }
 #layout .content .views .page-wrap {

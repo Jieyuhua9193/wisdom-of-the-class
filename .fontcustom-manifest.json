@@ -1,14 +1,14 @@
 {
   "checksum": {
-    "previous": "ea082d2f6a92ebda50efbeeff14c5820d3e03d7b3699a12024aa2cebdec9c572",
-    "current": "ea082d2f6a92ebda50efbeeff14c5820d3e03d7b3699a12024aa2cebdec9c572"
+    "previous": "732185aee51f567343a5529be91ac02e086427102d6d319d1fb9d2ef64470c97",
+    "current": "732185aee51f567343a5529be91ac02e086427102d6d319d1fb9d2ef64470c97"
   },
   "fonts": [
-    "./src/assets/fonts/css/fontcustom_ea082d2f6a92ebda50efbeeff14c5820.ttf",
-    "./src/assets/fonts/css/fontcustom_ea082d2f6a92ebda50efbeeff14c5820.svg",
-    "./src/assets/fonts/css/fontcustom_ea082d2f6a92ebda50efbeeff14c5820.woff",
-    "./src/assets/fonts/css/fontcustom_ea082d2f6a92ebda50efbeeff14c5820.eot",
-    "./src/assets/fonts/css/fontcustom_ea082d2f6a92ebda50efbeeff14c5820.woff2"
+    "./src/assets/fonts/css/fontcustom_732185aee51f567343a5529be91ac02e.ttf",
+    "./src/assets/fonts/css/fontcustom_732185aee51f567343a5529be91ac02e.svg",
+    "./src/assets/fonts/css/fontcustom_732185aee51f567343a5529be91ac02e.woff",
+    "./src/assets/fonts/css/fontcustom_732185aee51f567343a5529be91ac02e.eot",
+    "./src/assets/fonts/css/fontcustom_732185aee51f567343a5529be91ac02e.woff2"
   ],
   "glyphs": {
     "admin-icon": {
@@ -155,6 +155,10 @@
       "codepoint": 61728,
       "source": "./src/assets/fonts/svgs/plugs.svg"
     },
+    "qq": {
+      "codepoint": 61744,
+      "source": "./src/assets/fonts/svgs/qq.svg"
+    },
     "right": {
       "codepoint": 61729,
       "source": "./src/assets/fonts/svgs/right.svg"
@@ -166,6 +170,14 @@
     "settings": {
       "codepoint": 61731,
       "source": "./src/assets/fonts/svgs/settings.svg"
+    },
+    "sex-boy": {
+      "codepoint": 61742,
+      "source": "./src/assets/fonts/svgs/sex-boy.svg"
+    },
+    "sex-girl": {
+      "codepoint": 61743,
+      "source": "./src/assets/fonts/svgs/sex-girl.svg"
     },
     "share": {
       "codepoint": 61732,

@@ -4,12 +4,12 @@
 
 @font-face {
   font-family: "fontcustom";
-  src: url("./fontcustom_ea082d2f6a92ebda50efbeeff14c5820.eot");
-  src: url("./fontcustom_ea082d2f6a92ebda50efbeeff14c5820.eot?#iefix") format("embedded-opentype"),
-       url("./fontcustom_ea082d2f6a92ebda50efbeeff14c5820.woff2") format("woff2"),
-       url("./fontcustom_ea082d2f6a92ebda50efbeeff14c5820.woff") format("woff"),
-       url("./fontcustom_ea082d2f6a92ebda50efbeeff14c5820.ttf") format("truetype"),
-       url("./fontcustom_ea082d2f6a92ebda50efbeeff14c5820.svg#fontcustom") format("svg");
+  src: url("./fontcustom_732185aee51f567343a5529be91ac02e.eot");
+  src: url("./fontcustom_732185aee51f567343a5529be91ac02e.eot?#iefix") format("embedded-opentype"),
+       url("./fontcustom_732185aee51f567343a5529be91ac02e.woff2") format("woff2"),
+       url("./fontcustom_732185aee51f567343a5529be91ac02e.woff") format("woff"),
+       url("./fontcustom_732185aee51f567343a5529be91ac02e.ttf") format("truetype"),
+       url("./fontcustom_732185aee51f567343a5529be91ac02e.svg#fontcustom") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -17,7 +17,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: "fontcustom";
-    src: url("./fontcustom_ea082d2f6a92ebda50efbeeff14c5820.svg#fontcustom") format("svg");
+    src: url("./fontcustom_732185aee51f567343a5529be91ac02e.svg#fontcustom") format("svg");
   }
 }
 
@@ -60,9 +60,12 @@
 .icon-network:before,
 .icon-overview:before,
 .icon-plugs:before,
+.icon-qq:before,
 .icon-right:before,
 .icon-right_arrow:before,
 .icon-settings:before,
+.icon-sex-boy:before,
+.icon-sex-girl:before,
 .icon-share:before,
 .icon-shield:before,
 .icon-top:before,
@@ -120,9 +123,12 @@
 .icon-network:before { content: "\f11e"; }
 .icon-overview:before { content: "\f11f"; }
 .icon-plugs:before { content: "\f120"; }
+.icon-qq:before { content: "\f130"; }
 .icon-right:before { content: "\f121"; }
 .icon-right_arrow:before { content: "\f122"; }
 .icon-settings:before { content: "\f123"; }
+.icon-sex-boy:before { content: "\f12e"; }
+.icon-sex-girl:before { content: "\f12f"; }
 .icon-share:before { content: "\f124"; }
 .icon-shield:before { content: "\f12c"; }
 .icon-top:before { content: "\f125"; }

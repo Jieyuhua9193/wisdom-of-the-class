@@ -12,7 +12,7 @@
 .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu) {
  /* color: #FFFFFF; */
  color: #6159Eb;
- background:rgba(97, 89, 235, 0.05);
+ background: rgba(97, 89, 235, 0.05);
 }
 .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu):after {
  width: 3px;
@@ -20,4 +20,18 @@
 }
 .ivu-menu-vertical .ivu-menu-item:hover, .ivu-menu-vertical .ivu-menu-submenu-title:hover {
  color: #6159Eb;
+}
+/* table header */
+.ivu-table th {
+ height: 50px;
+ background-color: #fff;
+}
+.ivu-table:before {
+ background-color: #fff;
+}
+.ivu-table-wrapper {
+ border: none;
+}
+.ivu-table:after {
+ background-color: #fff;
 }

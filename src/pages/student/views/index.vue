@@ -1,18 +1,18 @@
 <template>
-  <div class="page-student">
-    <Tabs
-      :value="0"
-      size="small"
-      @on-click="onMenuSwitch">
-      <TabPane
-        v-for="(menu,index) in menus"
-        :key="index"
-        :label="menu.label"
-        :name="String(index)">
-        <router-view/>
-      </TabPane>
-    </Tabs>
-  </div>
+		<div class="page-student">
+				<Tabs
+						:value="0"
+						size="small"
+						@on-click="onMenuSwitch">
+						<TabPane
+								v-for="(menu,index) in menus"
+								:key="index"
+								:label="menu.label"
+								:name="String(index)">
+								<router-view v-if="menu === currentMenu" />
+						</TabPane>
+				</Tabs>
+		</div>
 </template>
 
 <script lang="ts">
@@ -41,12 +41,14 @@ const menus: MenuItem[] = [
 export default Vue.extend({
   data() {
     return {
-      menus
+      menus,
+      currentMenu: menus[0]
     }
   },
   methods: {
     onMenuSwitch(index: string) {
       const path = menus[Number(index)].path;
+      this.currentMenu = menus[Number(index)];
       this.$router.push(path)
     }
   }
@@ -55,6 +57,6 @@ export default Vue.extend({
 
 <style scoped>
 .page-student {
-  padding: 10px;
+		padding: 10px;
 }
 </style>
