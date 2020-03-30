@@ -7,8 +7,8 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import SearchBar from '../components/SearchBar.vue';
-import StudentTable from '../components/StudentTable.vue'
+import SearchBar from '../components/list/SearchBar.vue';
+import StudentTable from '../components/list/StudentTable.vue'
 
 export default Vue.extend({
   data() {

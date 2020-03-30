@@ -14,6 +14,10 @@ export function post(url: string) {
   return request(url, Method.post);
 }
 
+export function get(url: string) {
+  return request(url, Method.get);
+}
+
 function request(url: string, method: Method) {
   return (params?: any) => {
     return new Request(url, method, params);
