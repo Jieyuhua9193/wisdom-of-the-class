@@ -58,5 +58,6 @@ export default Vue.extend({
 <style scoped>
 .page-student {
 		padding: 10px;
+		overflow: auto;
 }
 </style>

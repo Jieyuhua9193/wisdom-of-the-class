@@ -1,13 +1,21 @@
 <template>
   <div class="student-messaging">
-    消息群发
+    <CmsSwitch />
+    <EmailMsg />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import CmsSwitch from '../components/messaging/Switch.vue'
+import EmailMsg from '../components/messaging/EmailMsg.vue'
 
-export default Vue.extend({})
+export default Vue.extend({
+  components: {
+    CmsSwitch,
+    EmailMsg
+  }
+})
 </script>
 
 <style scoped>

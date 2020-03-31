@@ -3,6 +3,7 @@
 				<div class="student-table">
 						<Table
 								no-data-text="熬了个喵┗|｀O′|┛ 嗷~~没有数据哦~~"
+								:height="450"
 								:loading="loading"
 								:columns="studentColumns"
 								:data="studentList">
@@ -25,7 +26,7 @@
 						</Table>
 				</div>
 				<div class="footer">
-						<Page :total="100" show-sizer/>
+						<Page :total="32" show-sizer/>
 				</div>
 		</div>
 </template>
