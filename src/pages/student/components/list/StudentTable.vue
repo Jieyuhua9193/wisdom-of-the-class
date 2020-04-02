@@ -13,7 +13,10 @@
 										<span>{{row.sex === 1?'男':'女'}}</span>
 								</template>
 								<template type="text" slot-scope="{row}" slot="qq">
-										<span class="icon-qq"></span>
+										<a
+												class="icon-qq"
+												target="_blank"
+												:href="`http://wpa.qq.com/msgrd?v=3&uin={row.qq}&site=qq&menu=yes`"></a>
 										<span>{{row.qq}}</span>
 								</template>
 								<template slot="operation">
@@ -48,11 +51,11 @@ export default Vue.extend({
       studentColumns: [
         {
           title: '学号',
-          key: 'studentId'
+          key: 'studentId',
         },
         {
           title: '姓名',
-          key: 'realName'
+          key: 'realName',
         },
         {
           title: '性别',
@@ -66,12 +69,12 @@ export default Vue.extend({
         {
           title: '身份证号',
           key: 'idCardNumber',
-          width: 160
+          width: 170
         },
         {
           title: '邮箱',
           key: 'email',
-          width: 160
+          width: 165
         },
         {
           title: 'QQ',
@@ -109,7 +112,7 @@ export default Vue.extend({
     },
     searchStudent(keyword: String) {
       this.loading = true;
-      studentClient.search({keyword}).success(r => {
+      studentClient.search({ keyword }).success(r => {
         this.studentList = r;
         this.loading = false
       })

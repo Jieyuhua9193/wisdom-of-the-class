@@ -3,10 +3,11 @@
 				<HeaderBar
 						:title="email && email.name"/>
 				<div class="content">
-					<Editor
-							v-if="emailTpl"
-							height="100%"
-							:htmlTpl="emailTpl"/>
+						<Editor
+								v-if="emailTpl"
+								height="100%"
+								:htmlTpl="emailTpl"/>
+						<EmailConfig/>
 				</div>
 		</div>
 </template>
@@ -15,25 +16,28 @@
 import Vue from 'vue'
 import HeaderBar from '../components/edit-email-tpl/HeaderBar.vue'
 import Editor from '../components/edit-email-tpl/Editor.vue'
+import EmailConfig from '../components/edit-email-tpl/EmailConfig.vue'
 import commonClient from '@/common/apis'
 
 export default Vue.extend({
   data() {
     return {
       email: {},
-      emailTpl: ''
+      emailTpl: '',
+      name: ''
     }
   },
   created() {
     const query = this.$router.currentRoute.query;
     this.email = query && query.email;
+    (this as any).name = query && query.name;
     this.initEmailTpl();
   },
   methods: {
     initEmailTpl() {
-      if (this.email && (this.email as any).fileName) {
+      if (this.name && this.name.trim() !== '') {
         commonClient.getEmailTplDetail({
-          fileName: (this.email as any).fileName
+          fileName: this.name
         }).success(r => {
           this.emailTpl = r
         }).error(() => {
@@ -48,11 +52,18 @@ export default Vue.extend({
   },
   components: {
     HeaderBar,
-    Editor
+    Editor,
+    EmailConfig
   }
 })
 </script>
 
+<style scoped>
+.content {
+		display: flex;
+		flex-direction: row;
+}
+</style>
 <style>
 /* table 样式 */
 table {
@@ -69,7 +80,6 @@ table th {
 		border-bottom: none !important;
 		text-align: center;
 }
-
 /* blockquote 样式 */
 blockquote {
 		display: block;
@@ -80,8 +90,7 @@ blockquote {
 		font-size: 100%;
 		background-color: #f1f1f1;
 }
-.w-e-text-container{
-		height: 600px !important;/*!important是重点，因为原div是行内样式设置的高度300px*/
-		overflow: scroll;
+.w-e-text-container {
+		height: 100vh !important; /*!important是重点，因为原div是行内样式设置的高度300px*/
 }
 </style>

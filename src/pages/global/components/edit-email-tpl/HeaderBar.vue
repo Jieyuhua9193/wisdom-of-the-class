@@ -1,6 +1,6 @@
 <template>
 		<div class="header-bar">
-				<a class="back">
+				<a class="back" @click="$router.go(-1)">
 						<span class="icon-back"></span>
 						<span>返回重选</span>
 				</a>

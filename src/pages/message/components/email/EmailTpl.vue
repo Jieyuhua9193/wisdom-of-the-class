@@ -48,7 +48,8 @@ export default Vue.extend({
       this.$router.push({
         path: '/edit-email-tpl',
         query: {
-          email: this.email
+          email: this.email,
+          name: this.email.fileName
         }
       })
     }

@@ -1,6 +1,8 @@
 <template>
 		<div class="editor-wrap">
-				<div ref="editorElem" style="text-align:left"></div>
+				<div
+						ref="editorElem"
+						style="text-align:left;"></div>
 		</div>
 </template>
 
@@ -33,5 +35,8 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-
+.editor-wrap {
+		width: 100%;
+		height: 100%;
+}
 </style>
