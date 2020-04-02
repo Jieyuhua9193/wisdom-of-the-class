@@ -12,6 +12,5 @@ const defaultMeta = {
 };
 
 export default [
-  comp('list', 'list', 'student-list', defaultMeta),
-  comp('import', 'bulkImport', 'student-import', defaultMeta),
+  comp('email', 'email', 'message-email', defaultMeta)
 ]

@@ -5,16 +5,10 @@
 						<span>挑选一套合适的模板邮件，根据系统提示，群发消息</span>
 				</div>
 				<div class="tpl-wrap">
-						<EmailTpl/>
-						<EmailTpl/>
-						<EmailTpl/>
-						<EmailTpl/>
-						<EmailTpl/>
-						<EmailTpl/>
-						<EmailTpl/>
-						<EmailTpl/>
-						<EmailTpl/>
-						<EmailTpl/>
+						<EmailTpl
+								v-for="(email,index) in emails"
+								:key="index"
+								:email="email"/>
 				</div>
 		</div>
 </template>
@@ -22,8 +16,19 @@
 <script lang="ts">
 import Vue from 'vue'
 import EmailTpl from './EmailTpl.vue'
+import commonClient from '@/common/apis'
 
 export default Vue.extend({
+  data() {
+    return {
+      emails: []
+    }
+  },
+		created() {
+    commonClient.getEmailTpls({}).success(r => {
+      this.emails = r || []
+    })
+		},
   components: {
     EmailTpl
   }

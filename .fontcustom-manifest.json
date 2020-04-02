@@ -1,14 +1,14 @@
 {
   "checksum": {
-    "previous": "732185aee51f567343a5529be91ac02e086427102d6d319d1fb9d2ef64470c97",
-    "current": "732185aee51f567343a5529be91ac02e086427102d6d319d1fb9d2ef64470c97"
+    "previous": "1f73ad84defcfd49f6cdbd75240276f685537cd0c21e08275a8bc7e79b7de527",
+    "current": "1f73ad84defcfd49f6cdbd75240276f685537cd0c21e08275a8bc7e79b7de527"
   },
   "fonts": [
-    "./src/assets/fonts/css/fontcustom_732185aee51f567343a5529be91ac02e.ttf",
-    "./src/assets/fonts/css/fontcustom_732185aee51f567343a5529be91ac02e.svg",
-    "./src/assets/fonts/css/fontcustom_732185aee51f567343a5529be91ac02e.woff",
-    "./src/assets/fonts/css/fontcustom_732185aee51f567343a5529be91ac02e.eot",
-    "./src/assets/fonts/css/fontcustom_732185aee51f567343a5529be91ac02e.woff2"
+    "./src/assets/fonts/css/fontcustom_1f73ad84defcfd49f6cdbd75240276f6.ttf",
+    "./src/assets/fonts/css/fontcustom_1f73ad84defcfd49f6cdbd75240276f6.svg",
+    "./src/assets/fonts/css/fontcustom_1f73ad84defcfd49f6cdbd75240276f6.woff",
+    "./src/assets/fonts/css/fontcustom_1f73ad84defcfd49f6cdbd75240276f6.eot",
+    "./src/assets/fonts/css/fontcustom_1f73ad84defcfd49f6cdbd75240276f6.woff2"
   ],
   "glyphs": {
     "admin-icon": {
@@ -134,6 +134,10 @@
     "male": {
       "codepoint": 61725,
       "source": "./src/assets/fonts/svgs/male.svg"
+    },
+    "menu-email": {
+      "codepoint": 61746,
+      "source": "./src/assets/fonts/svgs/menu-email.svg"
     },
     "menu-left": {
       "codepoint": 61738,

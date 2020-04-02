@@ -1,7 +1,7 @@
 <template>
 		<div class="page-student">
 				<Tabs
-						:value="0"
+						:value="currentMenuIndex"
 						size="small"
 						@on-click="onMenuSwitch">
 						<TabPane
@@ -9,7 +9,7 @@
 								:key="index"
 								:label="menu.label"
 								:name="String(index)">
-								<router-view v-if="menu === currentMenu" />
+								<router-view v-if="String(index) === currentMenuIndex"/>
 						</TabPane>
 				</Tabs>
 		</div>
@@ -29,10 +29,6 @@ const menus: MenuItem[] = [
     path: '/student/list'
   },
   {
-    label: '消息群发',
-    path: '/student/messaging'
-  },
-  {
     label: '批量导入',
     path: '/student/import'
   }
@@ -42,13 +38,21 @@ export default Vue.extend({
   data() {
     return {
       menus,
-      currentMenu: menus[0]
+      currentMenuIndex: '0'
     }
+  },
+  created() {
+    const path = this.$router.currentRoute.path;
+    menus.find((r, index) => {
+      if (r.path === path) {
+        this.currentMenuIndex = String(index)
+      }
+    })
   },
   methods: {
     onMenuSwitch(index: string) {
       const path = menus[Number(index)].path;
-      this.currentMenu = menus[Number(index)];
+      this.currentMenuIndex = index;
       this.$router.push(path)
     }
   }

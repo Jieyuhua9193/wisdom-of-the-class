@@ -12,15 +12,18 @@
 																				<img
 																						alt="Foodies Newsletters Email Template"
 																						title="Foodies"
-																						src="//i3.campaignmonitor.com/assets/images/email-templates/newsletters/ptl_template_4.jpg?ver=16397"
+																						:src="email.image"
 																						class="loaded"/>
 																		</div>
 																</div>
 														</div>
+														<div class="email-info">
+																<span>{{email.name}}</span>
+														</div>
 												</figure>
 												<a class="info" data-noqs="true">
 													<span class="inner">
-														<span class="cmbtn">Start Building</span>
+														<span class="cmbtn" @click="toEdit">开始使用</span>
 													</span>
 												</a>
 										</div>
@@ -33,7 +36,24 @@
 <script lang="ts">
 import Vue from 'vue'
 
-export default Vue.extend({})
+export default Vue.extend({
+  props: {
+    email: {
+      type: Object,
+      default: null
+    }
+  },
+  methods: {
+    toEdit() {
+      this.$router.push({
+        path: '/edit-email-tpl',
+        query: {
+          email: this.email
+        }
+      })
+    }
+  }
+})
 </script>
 
 <style scoped>
@@ -45,12 +65,10 @@ export default Vue.extend({})
 		display: inline-block;
 		position: relative;
 }
-
 .mix .photo-grid li {
 		display: inline-block;
 		width: 100%;
 }
-
 .mix .photo-grid img {
 		display: block;
 		height: auto;
@@ -61,13 +79,11 @@ export default Vue.extend({})
 		-o-transition: all 0.3s ease-in-out;
 		transition: all 0.3s ease-in-out;
 }
-
 .mix .photo-grid figure {
 		overflow: hidden;
 		position: relative;
 		margin: 0;
 }
-
 .mix .photo-grid figcaption {
 		font-size: 10px;
 		background-color: rgba(101, 185, 255, 0.9);
@@ -94,7 +110,6 @@ export default Vue.extend({})
 		z-index: 20;
 		border: 1px solid #fff;
 }
-
 .mix .photo-grid figcaption p {
 		display: table-cell;
 		position: relative;
@@ -116,7 +131,6 @@ export default Vue.extend({})
 		table-layout: fixed;
 		-webkit-font-smoothing: antialiased;
 }
-
 .mix .photo-grid li:hover figcaption {
 		-ms-filter: 'alpha(opacity=@calc_val)';
 		filter: alpha(opacity=100);
@@ -124,7 +138,6 @@ export default Vue.extend({})
 		-khtml-opacity: 1;
 		opacity: 1;
 }
-
 .mix .photo-grid li:hover figcaption p {
 		-webkit-transform: translateY(40px);
 		-moz-transform: translateY(40px);
@@ -132,15 +145,12 @@ export default Vue.extend({})
 		-o-transform: translateY(40px);
 		transform: translateY(40px);
 }
-
 .mix .photo-grid figcaption {
 		background-color: rgba(81, 207, 219, 0.9);
 }
-
 .mix .photo-grid figcaption p {
 		text-shadow: 1px 1px 0 #2bc0ce;
 }
-
 @-moz-document url-prefix() {
 		.mix .photo-grid li:hover figcaption p {
 				-webkit-transform: none;
@@ -158,7 +168,6 @@ export default Vue.extend({})
 		position: relative;
 		display: block;
 }
-
 .target figure,
 .target .info {
 		background-size: cover;
@@ -177,7 +186,6 @@ export default Vue.extend({})
 		color: #fff;
 		font-size: 0.6rem;
 }
-
 .target .info {
 		background: #111324;
 		position: absolute;
@@ -186,11 +194,9 @@ export default Vue.extend({})
 		width: 100%;
 		height: 100%;
 }
-
 .target .info .inner .no-hover {
 		pointer-events: none;
 }
-
 .target figure:after {
 		position: absolute;
 		top: 0;
@@ -204,7 +210,6 @@ export default Vue.extend({})
 		-webkit-backface-visibility: hidden;
 		backface-visibility: hidden;
 }
-
 .target:hover figure,
 .target:hover .info {
 		-webkit-transition: -webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
@@ -214,14 +219,12 @@ export default Vue.extend({})
 		transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1),
 		-webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
 }
-
 .target .info {
 		-webkit-transform: rotateY(180deg);
 		transform: rotateY(180deg);
 		-webkit-transform-style: preserve-3d;
 		transform-style: preserve-3d;
 }
-
 .target .info .inner {
 		-webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
 		transform: translateY(-50%) translateZ(60px) scale(0.94);
@@ -239,25 +242,21 @@ export default Vue.extend({})
 		opacity: 0;
 		transition: 0.3s ease;
 }
-
 .target figure {
 		-webkit-transform: rotateY(0deg);
 		transform: rotateY(0deg);
 		-webkit-transform-style: preserve-3d;
 		transform-style: preserve-3d;
 }
-
 .target:hover .info {
 		-webkit-transform: rotateY(0deg);
 		transform: rotateY(0deg);
 		-webkit-transform-style: preserve-3d;
 		transform-style: preserve-3d;
 }
-
 .target:hover .info .inner {
 		opacity: 1;
 }
-
 .target:hover figure {
 		-webkit-transform: rotateY(-180deg);
 		transform: rotateY(-180deg);
@@ -271,5 +270,16 @@ export default Vue.extend({})
 		border: 1px solid #fff;
 		border-radius: 5px;
 		font-weight: bold;
+}
+.email-info {
+		position: absolute;
+		width: 100%;
+		height: 50px;
+		background: rgba(255, 255, 255, 0.5);
+		bottom: 0;
+		color: #fff;
+		font-weight: bold;
+		font-size: 18px;
+		line-height: 50px;
 }
 </style>
