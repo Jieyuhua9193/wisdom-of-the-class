@@ -7,6 +7,7 @@ declare module 'vue/types/vue' {
     userState: UserState,
     $v: any,
     editor: any
+    _: any
   }
 }
 

@@ -10,7 +10,9 @@ module.exports = {
   ],
   rules: {
     'no-console': 'off',
-    'no-debugger': 'off'
+    'no-debugger': 'off',
+    'no-mixed-requires': 'off',
+    'no-mixed-spaces-and-tabs': 'off'
   },
   parserOptions: {
     parser: '@typescript-eslint/parser'

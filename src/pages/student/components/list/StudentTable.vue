@@ -3,7 +3,7 @@
 				<div class="student-table">
 						<Table
 								no-data-text="熬了个喵┗|｀O′|┛ 嗷~~没有数据哦~~"
-								:height="450"
+								:height="viewHeight"
 								:loading="loading"
 								:columns="studentColumns"
 								:data="studentList">
@@ -37,8 +37,10 @@
 <script lang="ts">
 import Vue from 'vue'
 import studentClient from '@/pages/student/apis'
+import layoutVuex from '@/layout/vuex/common';
 
 export default Vue.extend({
+  mixins: [layoutVuex],
   props: {
     keyword: {
       type: String,
@@ -94,7 +96,7 @@ export default Vue.extend({
     this.studentColumns = this.studentColumns.map(item => {
       return {
         align: 'center',
-        minWidth: 100,
+        minWidth: 140,
         ...item
       }
     })
