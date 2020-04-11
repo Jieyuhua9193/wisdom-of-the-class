@@ -1,16 +1,20 @@
 {
   "checksum": {
-    "previous": "1f73ad84defcfd49f6cdbd75240276f685537cd0c21e08275a8bc7e79b7de527",
-    "current": "1f73ad84defcfd49f6cdbd75240276f685537cd0c21e08275a8bc7e79b7de527"
+    "previous": "c009eb54bff01d7c00b334f83984b05a18da6b09a97a8b3620c50826c5abbb36",
+    "current": "c009eb54bff01d7c00b334f83984b05a18da6b09a97a8b3620c50826c5abbb36"
   },
   "fonts": [
-    "./src/assets/fonts/css/fontcustom_1f73ad84defcfd49f6cdbd75240276f6.ttf",
-    "./src/assets/fonts/css/fontcustom_1f73ad84defcfd49f6cdbd75240276f6.svg",
-    "./src/assets/fonts/css/fontcustom_1f73ad84defcfd49f6cdbd75240276f6.woff",
-    "./src/assets/fonts/css/fontcustom_1f73ad84defcfd49f6cdbd75240276f6.eot",
-    "./src/assets/fonts/css/fontcustom_1f73ad84defcfd49f6cdbd75240276f6.woff2"
+    "./src/assets/fonts/css/fontcustom_c009eb54bff01d7c00b334f83984b05a.ttf",
+    "./src/assets/fonts/css/fontcustom_c009eb54bff01d7c00b334f83984b05a.svg",
+    "./src/assets/fonts/css/fontcustom_c009eb54bff01d7c00b334f83984b05a.woff",
+    "./src/assets/fonts/css/fontcustom_c009eb54bff01d7c00b334f83984b05a.eot",
+    "./src/assets/fonts/css/fontcustom_c009eb54bff01d7c00b334f83984b05a.woff2"
   ],
   "glyphs": {
+    "active": {
+      "codepoint": 61749,
+      "source": "./src/assets/fonts/svgs/active.svg"
+    },
     "admin-icon": {
       "codepoint": 61696,
       "source": "./src/assets/fonts/svgs/admin-icon.svg"
@@ -83,6 +87,10 @@
       "codepoint": 61713,
       "source": "./src/assets/fonts/svgs/edit2.svg"
     },
+    "edu": {
+      "codepoint": 61750,
+      "source": "./src/assets/fonts/svgs/edu.svg"
+    },
     "error": {
       "codepoint": 61714,
       "source": "./src/assets/fonts/svgs/error.svg"
@@ -151,9 +159,17 @@
       "codepoint": 61726,
       "source": "./src/assets/fonts/svgs/network.svg"
     },
+    "notice": {
+      "codepoint": 61751,
+      "source": "./src/assets/fonts/svgs/notice.svg"
+    },
     "overview": {
       "codepoint": 61727,
       "source": "./src/assets/fonts/svgs/overview.svg"
+    },
+    "plain-pen": {
+      "codepoint": 61748,
+      "source": "./src/assets/fonts/svgs/plain-pen.svg"
     },
     "plugs": {
       "codepoint": 61728,
@@ -202,6 +218,10 @@
     "wating": {
       "codepoint": 61735,
       "source": "./src/assets/fonts/svgs/wating.svg"
+    },
+    "wechat-round": {
+      "codepoint": 61747,
+      "source": "./src/assets/fonts/svgs/wechat-round.svg"
     },
     "windows": {
       "codepoint": 61736,

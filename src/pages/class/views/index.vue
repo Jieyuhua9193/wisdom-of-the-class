@@ -25,12 +25,12 @@ interface MenuItem {
 
 const menus: MenuItem[] = [
   {
-    label: '学生列表',
-    path: '/student/list'
+    label: '成员列表',
+    path: '/class/users'
   },
   {
     label: '批量导入',
-    path: '/student/import'
+    path: '/class/import'
   }
 ];
 

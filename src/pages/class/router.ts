@@ -12,6 +12,6 @@ const defaultMeta = {
 };
 
 export default [
-  comp('list', 'list', 'student-list', defaultMeta),
-  comp('import', 'bulkImport', 'student-import', defaultMeta),
+  comp('users', 'users', 'uers', defaultMeta),
+  comp('import', 'bulkImport', 'import', defaultMeta),
 ]

@@ -4,11 +4,12 @@ import EditEmailTpl from '@/pages/global/views/edit-email-tpl.vue'
 
 import User from '@/pages/user/views/index.vue';
 import Overview from '@/pages/overview/views/index.vue';
-import Student from '@/pages/student/views/index.vue';
+import MyClass from '@/pages/class/views/index.vue';
 import Message from '@/pages/message/views/index.vue';
+import Active from '@/pages/active/views/index.vue';
 
 import UserRouter from '@/pages/user/router';
-import StudentRouter from '@/pages/student/router';
+import MyClassRouter from '@/pages/class/router';
 import EmailRouter from '@/pages/message/router';
 
 const frameIn = [
@@ -26,11 +27,11 @@ const frameIn = [
         component: Overview
       },
       {
-        path: 'student',
-        name: 'Student',
-        redirect: '/student/list',
-        component: Student,
-        children: StudentRouter,
+        path: 'class',
+        name: 'Class',
+        redirect: '/class/users',
+        component: MyClass,
+        children: MyClassRouter,
         meta: {
           auth: true
         }
@@ -41,6 +42,14 @@ const frameIn = [
         redirect: 'message/email',
         component: Message,
         children: EmailRouter,
+        meta: {
+          auth: true
+        }
+      },
+      {
+        path: 'active',
+        name: 'Active',
+        component: Active,
         meta: {
           auth: true
         }

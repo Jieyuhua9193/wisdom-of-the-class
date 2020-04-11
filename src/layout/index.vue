@@ -72,7 +72,6 @@ export default Vue.extend({
     }, 300),
     getViewStyle() {
       const el = this.$refs.view;
-      console.log('views style', el);
       this.$store.commit('UPDATE_VIEW_STYLE', {
         width: (el as any).offsetWidth,
         height: (el as any).offsetHeight

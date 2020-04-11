@@ -10,20 +10,6 @@ enum Method { get, post }
 http.defaults.baseURL = 'api/';
 http.defaults.headers.post['token'] = Cookie.get('wisdom_of_class_token');
 
-export function post(url: string) {
-  return request(url, Method.post);
-}
-
-export function get(url: string) {
-  return request(url, Method.get);
-}
-
-function request(url: string, method: Method) {
-  return (params?: any) => {
-    return new Request(url, method, params);
-  };
-}
-
 class Request {
   private successBlock?: (r?: Success) => void;
   private errorBlock?: (r: Error) => void;
@@ -48,6 +34,7 @@ class Request {
       }
     }).catch(err => {
       (Message as any).error('系统异常，请刷新重试');
+      console.error('>>>>>>系统错误<<<<<<<<<<');
       console.log(err)
     })
   }
@@ -63,4 +50,16 @@ class Request {
   }
 }
 
+export function post(url: string) {
+  return request(url, Method.post);
+}
 
+export function get(url: string) {
+  return request(url, Method.get);
+}
+
+function request(url: string, method: Method) {
+  return (params?: any) => {
+    return new Request(url, method, params);
+  };
+}

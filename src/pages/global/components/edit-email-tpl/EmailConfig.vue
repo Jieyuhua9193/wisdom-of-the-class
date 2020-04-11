@@ -3,7 +3,7 @@
 				<div class="soft-loading">
 						<span class="icon-alert"></span>
 						<h2 class="title">配置群发规则</h2>
-						<EmailForm />
+						<EmailForm ref="emailForm" />
 				</div>
 		</div>
 </template>
@@ -15,7 +15,12 @@ import EmailForm from './EmailForm.vue'
 export default Vue.extend({
   components: {
     EmailForm
-  }
+  },
+		methods: {
+    getFormData() {
+      return (this.$refs.emailForm as any).request || null
+    }
+		}
 })
 </script>
 

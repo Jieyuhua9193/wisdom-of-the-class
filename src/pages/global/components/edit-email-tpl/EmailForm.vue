@@ -11,6 +11,16 @@
 								class="item-in"/>
 				</div>
 				<div class="item">
+						<h3 class="title">发送时间</h3>
+						<p class="prompt item-in">不选则为立即发送</p>
+						<DatePicker
+								type="datetime"
+								class="item-in"
+								v-model="request.sendTime"
+								placeholder="选择邮件发送时间"
+								style="width: 200px"/>
+				</div>
+				<div class="item">
 						<h3 class="title">群发目标</h3>
 						<RadioGroup
 								v-model="request.targetType"
@@ -66,12 +76,12 @@ export default Vue.extend({
     return {
       request: {
         targetType: 0,
-        targetUsers: [],
         subject: '',
-        users: []
+        users: [],
+		      sendTime: null
       },
       users: [],
-		    prompt: '使用{{}}包裹插值字段，字段会在后台编译成发送目标用户的信息，例如：{{realName}} ==> 张三'
+      prompt: '使用{{}}包裹插值字段，字段会在后台编译成发送目标用户的信息，例如：{{realName}} ==> 张三'
     }
   },
   created() {
@@ -108,6 +118,10 @@ export default Vue.extend({
 }
 .item .item-in {
 		padding-left: 10px;
+}
+.item .prompt {
+		color: #999;
+		line-height: 30px;
 }
 .user-select {
 		margin-top: 15px;

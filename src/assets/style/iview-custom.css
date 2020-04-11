@@ -35,3 +35,9 @@
 .ivu-table:after {
  background-color: #fff;
 }
+.ivu-drawer-header {
+ border: none;
+}
+.ivu-drawer-header, .ivu-drawer-body {
+ padding: 0;
+}

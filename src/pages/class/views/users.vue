@@ -1,14 +1,14 @@
 <template>
   <div class="student-list">
     <SearchBar @onSearch="onSearch"/>
-    <StudentTable :keyword="keyword"/>
+    <UsersTable :keyword="keyword"/>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import SearchBar from '../components/list/SearchBar.vue';
-import StudentTable from '../components/list/StudentTable.vue'
+import SearchBar from '../components/users/SearchBar.vue';
+import UsersTable from '../components/users/UsersTable.vue'
 
 export default Vue.extend({
   data() {
@@ -23,7 +23,7 @@ export default Vue.extend({
   },
   components: {
     SearchBar,
-    StudentTable
+    UsersTable
   },
 })
 </script>

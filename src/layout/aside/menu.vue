@@ -75,7 +75,6 @@ export default Vue.extend({
  },
  methods: {
   onMenuClick(name: string, parent:string) {
-   console.log(name,parent);
    mainMenu.forEach(r => {
     if (r.name === name) {
      this.opendMenu = ''

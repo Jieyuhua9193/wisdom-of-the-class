@@ -4,12 +4,12 @@
 
 @font-face {
   font-family: "fontcustom";
-  src: url("./fontcustom_1f73ad84defcfd49f6cdbd75240276f6.eot");
-  src: url("./fontcustom_1f73ad84defcfd49f6cdbd75240276f6.eot?#iefix") format("embedded-opentype"),
-       url("./fontcustom_1f73ad84defcfd49f6cdbd75240276f6.woff2") format("woff2"),
-       url("./fontcustom_1f73ad84defcfd49f6cdbd75240276f6.woff") format("woff"),
-       url("./fontcustom_1f73ad84defcfd49f6cdbd75240276f6.ttf") format("truetype"),
-       url("./fontcustom_1f73ad84defcfd49f6cdbd75240276f6.svg#fontcustom") format("svg");
+  src: url("./fontcustom_c009eb54bff01d7c00b334f83984b05a.eot");
+  src: url("./fontcustom_c009eb54bff01d7c00b334f83984b05a.eot?#iefix") format("embedded-opentype"),
+       url("./fontcustom_c009eb54bff01d7c00b334f83984b05a.woff2") format("woff2"),
+       url("./fontcustom_c009eb54bff01d7c00b334f83984b05a.woff") format("woff"),
+       url("./fontcustom_c009eb54bff01d7c00b334f83984b05a.ttf") format("truetype"),
+       url("./fontcustom_c009eb54bff01d7c00b334f83984b05a.svg#fontcustom") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -17,13 +17,14 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: "fontcustom";
-    src: url("./fontcustom_1f73ad84defcfd49f6cdbd75240276f6.svg#fontcustom") format("svg");
+    src: url("./fontcustom_c009eb54bff01d7c00b334f83984b05a.svg#fontcustom") format("svg");
   }
 }
 
 [data-icon]:before { content: attr(data-icon); }
 
 [data-icon]:before,
+.icon-active:before,
 .icon-admin-icon:before,
 .icon-alert:before,
 .icon-alipay:before,
@@ -42,6 +43,7 @@
 .icon-commit-code-and-update-prefer-complete:before,
 .icon-deleted_small:before,
 .icon-edit2:before,
+.icon-edu:before,
 .icon-error:before,
 .icon-gear-3:before,
 .icon-gift:before,
@@ -59,7 +61,9 @@
 .icon-menu-left:before,
 .icon-menu-right:before,
 .icon-network:before,
+.icon-notice:before,
 .icon-overview:before,
+.icon-plain-pen:before,
 .icon-plugs:before,
 .icon-qq:before,
 .icon-right:before,
@@ -72,6 +76,7 @@
 .icon-top:before,
 .icon-up2:before,
 .icon-wating:before,
+.icon-wechat-round:before,
 .icon-windows:before,
 .icon-yes:before {
   display: inline-block;
@@ -88,6 +93,7 @@
   font-smoothing: antialiased;
 }
 
+.icon-active:before { content: "\f135"; }
 .icon-admin-icon:before { content: "\f100"; }
 .icon-alert:before { content: "\f101"; }
 .icon-alipay:before { content: "\f102"; }
@@ -106,6 +112,7 @@
 .icon-commit-code-and-update-prefer-complete:before { content: "\f10f"; }
 .icon-deleted_small:before { content: "\f110"; }
 .icon-edit2:before { content: "\f111"; }
+.icon-edu:before { content: "\f136"; }
 .icon-error:before { content: "\f112"; }
 .icon-gear-3:before { content: "\f113"; }
 .icon-gift:before { content: "\f114"; }
@@ -123,7 +130,9 @@
 .icon-menu-left:before { content: "\f12a"; }
 .icon-menu-right:before { content: "\f12b"; }
 .icon-network:before { content: "\f11e"; }
+.icon-notice:before { content: "\f137"; }
 .icon-overview:before { content: "\f11f"; }
+.icon-plain-pen:before { content: "\f134"; }
 .icon-plugs:before { content: "\f120"; }
 .icon-qq:before { content: "\f130"; }
 .icon-right:before { content: "\f121"; }
@@ -136,5 +145,6 @@
 .icon-top:before { content: "\f125"; }
 .icon-up2:before { content: "\f126"; }
 .icon-wating:before { content: "\f127"; }
+.icon-wechat-round:before { content: "\f133"; }
 .icon-windows:before { content: "\f128"; }
 .icon-yes:before { content: "\f129"; }

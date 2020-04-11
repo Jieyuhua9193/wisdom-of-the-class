@@ -7,5 +7,6 @@ export default {
   downloadUserTpl: get('user/downloadTpl'),
   importUsers: post('user/importUsers'),
   getEmailTpls: post('common/get-email-tpls'),
-  getEmailTplDetail: post('common/get-email-tpl-detail')
+  getEmailTplDetail: post('common/get-email-tpl-detail'),
+  sendEmail: post('common/send-email')
 }

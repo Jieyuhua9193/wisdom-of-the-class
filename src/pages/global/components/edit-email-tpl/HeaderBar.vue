@@ -6,7 +6,7 @@
 				</a>
 				<span class="title">{{title}}</span>
 				<div class="btn-confirm">
-						<a class="btn">创建群发任务</a>
+						<a class="btn" @click="$emit('onEmailTaskCreate')">创建群发任务</a>
 				</div>
 		</div>
 </template>

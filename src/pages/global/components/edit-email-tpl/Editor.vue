@@ -28,9 +28,14 @@ export default Vue.extend({
     this.editor.customConfig.onchange = (html: string) => {
       this.editorContent = html;
     };
-    this.editor.create()
+    this.editor.create();
     this.editor.txt.html(this.htmlTpl);
-  }
+  },
+		methods: {
+    getEmailHtml() {
+      return this.editor.txt.html();
+    }
+		}
 })
 </script>
 

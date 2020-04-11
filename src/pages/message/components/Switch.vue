@@ -1,8 +1,14 @@
 <template>
-		<div class="switch-wrap">
-				<div class="item green">模板邮件群发</div>
-				<div class="item gray middle">短信群发</div>
-				<div class="item gray">公众号消息群发</div>
+		<div class="com_wrap">
+				<div class="switch-wrap">
+						<div class="item green">模板邮件群发</div>
+						<div class="item gray middle">短信群发</div>
+						<div class="item gray">公众号消息群发</div>
+				</div>
+				<a class="history">
+						<span class="icon-booking"></span>
+						<span>群发记录</span>
+				</a>
 		</div>
 </template>
 
@@ -35,5 +41,13 @@ export default Vue.extend({})
 }
 .switch-wrap .gray {
 		cursor:no-drop
+}
+.history {
+		vertical-align: bottom;
+		margin-left: 20px;
+		user-select: none;
+}
+.history .icon-booking {
+		margin-right: 5px;
 }
 </style>
