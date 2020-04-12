@@ -1,4 +1,3 @@
-import userType from "../../models/UserType"
 <template>
 		<div class="wrap">
 				<div class="student-table">
