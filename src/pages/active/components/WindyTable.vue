@@ -4,7 +4,6 @@
 						<Table
 								no-data-text="暂无活动哦QAQ，快来创建一个吧"
 								:height="viewHeight - 175"
-								:loading="loading"
 								:columns="columns"
 								:data="activeList"></Table>
 				</div>
@@ -37,6 +36,9 @@ export default Vue.extend({
   },
   data() {
     return {
+      total: 0,
+		    size: 8,
+		    page: 1,
       columns: [
         {
           title: '活动名称',
@@ -77,6 +79,8 @@ export default Vue.extend({
     }
   },
   methods: {
+    onPageChange() {},
+    onPageSizeChange() {}
   }
 })
 </script>

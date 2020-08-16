@@ -7,5 +7,6 @@ export default {
   getDormitories: post('dormitory/get'),
   updateUser: post('user/update'),
   remove: post('/class/remove'),
-  getDorStudents: post('/dormitory/get-student')
+  getDorStudents: post('/dormitory/get-student'),
+  getTrace: post('trace/get'),
 }

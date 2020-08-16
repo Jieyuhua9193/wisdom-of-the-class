@@ -37,7 +37,7 @@ import iHeader from './header/index.vue'
 import layoutVuex from '@/layout/vuex/common'
 import commonClient from '@/common/apis';
 import commonVuex from '@/common/vuex/common';
-import {debounce } from 'lodash';
+import {debounce} from 'lodash';
 
 export default Vue.extend({
   mixins: [layoutVuex, commonVuex],

@@ -33,13 +33,17 @@
 								:userDetail="userDetail"
 								:dormitories="dormitories"
 								v-if="currentTab === 'basic'"/>
+						<Trace
+								v-if="currentTab === 'trace'"
+						  :user="userDetail"/>
 				</div>
 		</div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import Basic from './Basic.vue'
+import Basic from './Basic.vue';
+import Trace from './Trace.vue';
 import Role, {getRoleText} from '@/common/models/Role';
 
 export default Vue.extend({
@@ -81,7 +85,8 @@ export default Vue.extend({
     }
   },
   components: {
-    Basic
+    Basic,
+    Trace
   }
 })
 </script>
